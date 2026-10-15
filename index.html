@@ -5,919 +5,231 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Presentación interactiva sobre el análisis estratégico y tecnológico de DICOPSA, basada en el avance I del proyecto universitario."
+      content="DICOPSA: diagnóstico estratégico, infraestructura tecnológica y plan de mejora."
     />
-    <meta name="theme-color" content="#07111f" />
-    <title>
-      DICOPSA | Planificación Estratégica y Organización Informática
-    </title>
+    <title>DICOPSA | Diagnóstico estratégico</title>
   </head>
   <body>
-    <a class="skip-link" href="#presentation">Saltar a la presentación</a>
-
-    <div class="presentation-shell">
+    <div class="site-shell">
       <header
-        class="presentation-toolbar"
-        aria-label="Controles de la presentación"
+        id="site-header"
+        class="site-header"
+        aria-label="Cabecera principal"
       >
-        <div class="toolbar-branding">
-          <span class="toolbar-branding__label">DICOPSA</span>
-          <span class="toolbar-branding__subtitle"
-            >Planificación estratégica y organización informática</span
-          >
-        </div>
+        <div class="site-header__inner container">
+          <a class="brand" href="#inicio" aria-label="Ir al inicio de DICOPSA">
+            <span class="brand__mark">D</span>
+            <span class="brand__text">DICOPSA</span>
+          </a>
 
-        <div class="toolbar-actions">
           <button
-            class="control-button control-button--ghost"
             type="button"
-            data-action="toggle-toc"
-            aria-controls="toc-drawer"
+            class="site-nav__toggle"
+            data-nav-toggle
             aria-expanded="false"
+            aria-controls="primary-nav"
+            aria-label="Abrir menú de navegación"
           >
-            Índice
+            Menú
           </button>
-          <button
-            class="control-button"
-            type="button"
-            data-action="previous-slide"
-            aria-label="Ir a la diapositiva anterior"
-          >
-            Anterior
-          </button>
-          <button
-            class="control-button"
-            type="button"
-            data-action="next-slide"
-            aria-label="Ir a la diapositiva siguiente"
-          >
-            Siguiente
-          </button>
-          <button
-            class="control-button control-button--accent"
-            type="button"
-            data-action="fullscreen"
-            aria-label="Activar pantalla completa"
-          >
-            Pantalla completa
-          </button>
-        </div>
 
-        <div class="toolbar-status" aria-live="polite">
-          <span class="slide-counter" data-slide-counter>01 / 01</span>
-          <div class="progress-track" aria-hidden="true">
-            <span class="progress-track__fill" data-progress-bar></span>
-          </div>
+          <nav
+            class="site-nav"
+            id="primary-nav"
+            data-site-nav
+            aria-label="Navegación principal"
+          >
+            <ul class="site-nav__list">
+              <li><a href="#inicio">Inicio</a></li>
+              <li><a href="#empresa">La empresa</a></li>
+              <li><a href="#estrategia">Análisis estratégico</a></li>
+              <li><a href="#infraestructura">Infraestructura</a></li>
+              <li><a href="#riesgos">Riesgos</a></li>
+              <li><a href="#mejora">Plan de mejora</a></li>
+              <li><a href="#diagnostico">Diagnóstico</a></li>
+            </ul>
+          </nav>
         </div>
       </header>
 
-      <aside class="toc-drawer" id="toc-drawer" hidden>
-        <div
-          class="toc-drawer__panel"
-          role="dialog"
-          aria-modal="true"
-          aria-labelledby="toc-title"
-        >
-          <div class="toc-drawer__header">
-            <div>
-              <p class="eyebrow">Tabla de contenidos</p>
-              <h2 id="toc-title">Navegación de la presentación</h2>
+      <main>
+        <section id="inicio" class="site-section hero">
+          <div class="container hero__inner">
+            <div class="hero__content">
+              <p class="eyebrow">Distribuidora Comercial del Pacífico</p>
+              <h1>
+                DICOPSA: un modelo de distribución con potencial de crecimiento
+                digital.
+              </h1>
+              <p class="lead">
+                Diagnóstico estratégico y tecnológico orientado a fortalecer la
+                continuidad, la eficiencia operativa y la resiliencia del
+                negocio en Nicaragua.
+              </p>
+              <div class="hero__actions">
+                <a class="button button--primary" href="#empresa"
+                  >Conocer la empresa</a
+                >
+                <a class="button button--secondary" href="#diagnostico"
+                  >Ver diagnóstico</a
+                >
+              </div>
             </div>
-            <button
-              class="control-button control-button--ghost"
-              type="button"
-              data-action="close-toc"
-            >
-              Cerrar
-            </button>
+            <aside class="hero__panel" aria-label="Indicadores clave">
+              <p class="hero__panel-label">Indicadores clave</p>
+              <div id="home-kpis" class="kpi-grid"></div>
+            </aside>
           </div>
-          <nav
-            class="toc-list"
-            data-toc-list
-            aria-label="Secciones de la presentación"
-          ></nav>
-        </div>
-      </aside>
+        </section>
 
-      <main class="presentation-main">
-        <div class="reveal" id="presentation">
-          <div class="slides">
-            <section
-              class="slide slide--cover"
-              data-title="Portada institucional"
-            >
-              <div class="cover-layout">
-                <div class="cover-layout__eyebrow">
-                  Universidad Americana · Facultad de Ingeniería y Arquitectura
-                </div>
-                <div class="cover-badge" aria-hidden="true">
-                  <span class="cover-badge__ring"></span>
-                  <span class="cover-badge__mono">UAM</span>
-                </div>
-                <h1>Planificación Estratégica y Organización Informática</h1>
-                <p class="cover-layout__lead">
-                  Proyecto de curso - Avance I · Perfil y diagnóstico inicial de
-                  <strong
-                    >Distribuidora Comercial del Pacífico, S.A.
-                    (DICOPSA)</strong
-                  >.
-                </p>
-                <div class="cover-meta">
-                  <div>
-                    <span class="cover-meta__label">Integrantes</span>
-                    <span class="cover-meta__value"
-                      >Elias Adrian Marin Cruz · Diedereich Alexander Alemán
-                      Martinez</span
-                    >
-                  </div>
-                  <div>
-                    <span class="cover-meta__label">Docente</span>
-                    <span class="cover-meta__value"
-                      >Noel José Gavarrete Martínez</span
-                    >
-                  </div>
-                  <div>
-                    <span class="cover-meta__label">Fecha</span>
-                    <span class="cover-meta__value"
-                      >30 de septiembre del 2026 · Managua, Nicaragua</span
-                    >
-                  </div>
-                </div>
-              </div>
-            </section>
-
-            <section
-              class="slide"
-              data-title="Introducción y objetivo del análisis"
-            >
-              <div class="slide-header">
-                <p class="eyebrow">01 · Introducción</p>
-                <h2>Objetivo académico y alcance del avance</h2>
-              </div>
-              <div class="two-column-layout">
-                <article class="content-card">
-                  <h3>Objetivo</h3>
-                  <p>
-                    Analizar la idea empresarial dada y sus planes como empresa
-                    para determinar los aspectos básicos con los que cuenta para
-                    competir.
-                  </p>
-                </article>
-                <article class="content-card content-card--accent">
-                  <h3>Enfoque del documento</h3>
-                  <p>
-                    El avance organiza el perfil general, el análisis externo
-                    PESTEL y la situación tecnológica interna de DICOPSA,
-                    respetando los datos del documento fuente y separando la
-                    realidad actual de las propuestas futuras.
-                  </p>
-                </article>
-              </div>
-            </section>
-
-            <section class="slide" data-title="Índice navegable">
-              <div class="slide-header">
-                <p class="eyebrow">02 · Navegación</p>
-                <h2>Índice interactivo de la presentación</h2>
-              </div>
-              <div class="toc-index-grid">
-                <button class="index-card" type="button" data-goto="0">
-                  <span>01</span><strong>Portada institucional</strong>
-                </button>
-                <button class="index-card" type="button" data-goto="1">
-                  <span>02</span><strong>Introducción y objetivo</strong>
-                </button>
-                <button class="index-card" type="button" data-goto="3">
-                  <span>03</span><strong>Perfil general de DICOPSA</strong>
-                </button>
-                <button class="index-card" type="button" data-goto="4">
-                  <span>04</span><strong>Historia y evolución</strong>
-                </button>
-                <button class="index-card" type="button" data-goto="5">
-                  <span>05</span><strong>Giro y operatividad</strong>
-                </button>
-                <button class="index-card" type="button" data-goto="6">
-                  <span>06</span><strong>Mercado y ventaja competitiva</strong>
-                </button>
-                <button class="index-card" type="button" data-goto="7">
-                  <span>07</span><strong>Situación actual y visión 2030</strong>
-                </button>
-                <button class="index-card" type="button" data-goto="8">
-                  <span>08</span><strong>Fortalezas y oportunidades</strong>
-                </button>
-                <button class="index-card" type="button" data-goto="9">
-                  <span>09</span><strong>PESTEL: oportunidades</strong>
-                </button>
-                <button class="index-card" type="button" data-goto="10">
-                  <span>10</span><strong>PESTEL: amenazas</strong>
-                </button>
-                <button class="index-card" type="button" data-goto="11">
-                  <span>11</span><strong>Situación tecnológica</strong>
-                </button>
-                <button class="index-card" type="button" data-goto="12">
-                  <span>12</span><strong>Organización de TI</strong>
-                </button>
-                <button class="index-card" type="button" data-goto="13">
-                  <span>13</span><strong>Infraestructura actual</strong>
-                </button>
-                <button class="index-card" type="button" data-goto="14">
-                  <span>14</span><strong>Datacenter MDF</strong>
-                </button>
-                <button class="index-card" type="button" data-goto="15">
-                  <span>15</span><strong>Cuartos IDF</strong>
-                </button>
-                <button class="index-card" type="button" data-goto="16">
-                  <span>16</span
-                  ><strong>Fortalezas, debilidades y fallos</strong>
-                </button>
-                <button class="index-card" type="button" data-goto="17">
-                  <span>17</span><strong>Mejoras y certificaciones</strong>
-                </button>
-                <button class="index-card" type="button" data-goto="18">
-                  <span>18</span
-                  ><strong>Síntesis, conclusiones y preguntas</strong>
-                </button>
-              </div>
-            </section>
-
-            <section class="slide" data-title="Perfil general de DICOPSA">
-              <div class="slide-header">
-                <p class="eyebrow">03 · Perfil de la compañía</p>
-                <h2>Aspectos básicos de la empresa</h2>
-              </div>
-              <div class="stats-grid">
-                <article class="stat-card">
-                  <span class="stat-card__label">Empresa</span>
-                  <strong class="stat-card__value"
-                    >Distribuidora Comercial del Pacífico, S.A.
-                    (DICOPSA)</strong
-                  >
-                </article>
-                <article class="stat-card">
-                  <span class="stat-card__label">Ubicación</span>
-                  <strong class="stat-card__value"
-                    >Managua, con oficinas centrales y centro de distribución en
-                    Carretera Norte, km 6½</strong
-                  >
-                </article>
-                <article class="stat-card">
-                  <span class="stat-card__label">Mercado geográfico</span>
-                  <strong class="stat-card__value"
-                    >Pacífico de Nicaragua, con más de 3,500 clientes
-                    activos</strong
-                  >
-                </article>
-                <article class="stat-card">
-                  <span class="stat-card__label">Operación</span>
-                  <strong class="stat-card__value"
-                    >Comercio mayorista e importador con marca propia y
-                    logística de última milla</strong
-                  >
-                </article>
-              </div>
-            </section>
-
-            <section
-              class="slide"
-              data-title="Historia y evolución empresarial"
-            >
-              <div class="slide-header">
-                <p class="eyebrow">04 · Historia</p>
-                <h2>De negocio familiar a distribuidor regional</h2>
-              </div>
-              <div class="timeline">
-                <article class="timeline-item">
-                  <span>2004</span>
-                  <p>
-                    Fundación como negocio familiar de venta de granos básicos.
-                  </p>
-                </article>
-                <article class="timeline-item">
-                  <span>2010</span>
-                  <p>Constitución como sociedad anónima.</p>
-                </article>
-                <article class="timeline-item">
-                  <span>2014</span>
-                  <p>
-                    Construcción del centro de distribución en Carretera Norte.
-                  </p>
-                </article>
-                <article class="timeline-item">
-                  <span>2016</span>
-                  <p>Inicio de importaciones.</p>
-                </article>
-                <article class="timeline-item">
-                  <span>2018–2021</span>
-                  <p>Apertura de sucursales en León, Masaya y Chinandega.</p>
-                </article>
-                <article class="timeline-item">
-                  <span>2019 / 2023</span>
-                  <p>
-                    Implementación del ERP y de la aplicación móvil de preventa.
-                  </p>
-                </article>
-              </div>
-            </section>
-
-            <section class="slide" data-title="Giro del negocio y operatividad">
-              <div class="slide-header">
-                <p class="eyebrow">05 · Negocio</p>
-                <h2>Giro comercial, clientes y operatividad funcional</h2>
-              </div>
-              <div class="two-column-layout">
-                <article class="content-card">
-                  <h3>Giro del negocio</h3>
-                  <p>
-                    Distribución de productos de consumo masivo: abarrotes,
-                    granos básicos, bebidas, artículos de limpieza y cuidado
-                    personal.
-                  </p>
-                  <p>
-                    También comercializa la marca propia
-                    <strong>Del Pacífico</strong> en arroz, frijol y azúcar
-                    empacados.
-                  </p>
-                </article>
-                <article class="content-card">
-                  <h3>Operatividad funcional</h3>
-                  <p>
-                    El 75 % de las ventas se realiza al por mayor a pulperías,
-                    minisúper, farmacias y supermercados regionales; el resto
-                    corresponde a venta minorista en sucursales.
-                  </p>
-                  <p>Importa desde Centroamérica y México.</p>
-                </article>
-              </div>
-            </section>
-
-            <section
-              class="slide"
-              data-title="Mercado geográfico y ventaja competitiva"
-            >
-              <div class="slide-header">
-                <p class="eyebrow">06 · Mercado</p>
-                <h2>Cobertura regional y propuesta de valor</h2>
-              </div>
-              <div class="feature-grid">
-                <article class="feature-card">
-                  <h3>Mercado geográfico</h3>
-                  <p>
-                    Managua, León, Chinandega, Masaya, Granada, Carazo y Rivas.
-                  </p>
-                </article>
-                <article class="feature-card">
-                  <h3>Ventaja competitiva</h3>
-                  <p>
-                    Red de distribución capilar con flota propia, entregas en
-                    24–48 horas y crédito flexible para pulperías.
-                  </p>
-                </article>
-                <article class="feature-card">
-                  <h3>Relación comercial</h3>
-                  <p>
-                    Relaciones de largo plazo con clientes y proveedores, con
-                    llegada directa al comercio pequeño de barrio y de
-                    municipios.
-                  </p>
-                </article>
-                <article class="feature-card">
-                  <h3>Marca propia</h3>
-                  <p>
-                    La marca Del Pacífico mejora el margen y complementa la
-                    oferta de productos de terceros.
-                  </p>
-                </article>
-              </div>
-            </section>
-
-            <section
-              class="slide"
-              data-title="Situación actual y visión futura para 2030"
-            >
-              <div class="slide-header">
-                <p class="eyebrow">07 · Horizonte estratégico</p>
-                <h2>Estado actual y meta al 2030</h2>
-              </div>
-              <div class="split-panel">
-                <article class="content-card">
-                  <h3>Situación actual</h3>
-                  <p>
-                    Empresa existente con 22 años de operación. La situación es
-                    buena y estable, con crecimiento moderado, aunque con
-                    márgenes presionados por los costos logísticos y la
-                    competencia.
-                  </p>
-                  <p>
-                    La TI opera de forma reactiva: se compra cuando algo falla o
-                    cuando un área lo pide.
-                  </p>
-                </article>
-                <article class="content-card content-card--accent">
-                  <h3>Situación futura</h3>
-                  <p>
-                    Ser al 2030 el distribuidor de consumo masivo líder del
-                    Pacífico con cobertura nacional, un canal B2B digital,
-                    logística optimizada con datos y decisiones basadas en
-                    información.
-                  </p>
-                  <p>
-                    La expansión mencionada en el documento incluye Estelí y
-                    Matagalpa.
-                  </p>
-                </article>
-              </div>
-            </section>
-
-            <section class="slide" data-title="Fortalezas y oportunidades">
-              <div class="slide-header">
-                <p class="eyebrow">08 · Fortalezas</p>
-                <h2>Base interna para competir y crecer</h2>
-              </div>
-              <div class="card-grid card-grid--two">
-                <article class="content-card">
-                  <h3>Fortalezas clave</h3>
-                  <ul class="bullet-list">
-                    <li>22 años de trayectoria y buena reputación.</li>
-                    <li>
-                      Cobertura en toda la región del Pacífico con sucursales
-                      propias.
-                    </li>
-                    <li>Flota propia de reparto.</li>
-                    <li>Cartera de clientes y marcas diversificada.</li>
-                    <li>ERP ya implementado con base transaccional.</li>
-                    <li>Fuerza de ventas con app de preventa.</li>
-                  </ul>
-                </article>
-                <article class="content-card content-card--accent">
-                  <h3>Oportunidades clave</h3>
-                  <ul class="bullet-list">
-                    <li>Canal B2B digital para pedidos web y por WhatsApp.</li>
-                    <li>
-                      Uso de datos históricos del ERP para prever demanda.
-                    </li>
-                    <li>Expansión hacia la zona norte y central del país.</li>
-                    <li>
-                      Aprovechamiento de pagos digitales y tratados comerciales.
-                    </li>
-                    <li>
-                      Nube híbrida para respaldos y continuidad del negocio.
-                    </li>
-                  </ul>
-                </article>
-              </div>
-            </section>
-
-            <section
-              class="slide"
-              data-title="Análisis externo PESTEL: oportunidades"
-            >
-              <div class="slide-header">
-                <p class="eyebrow">09 · PESTEL</p>
-                <h2>Oportunidades del entorno externo</h2>
-              </div>
-              <div class="pestel-grid">
-                <article class="pestel-card">
-                  <h3>Políticos</h3>
-                  <p>
-                    Tratados comerciales vigentes y políticas de digitalización
-                    de trámites.
-                  </p>
-                </article>
-                <article class="pestel-card">
-                  <h3>Económicos</h3>
-                  <p>
-                    Estabilidad cambiaria relativa y mayor uso de pagos
-                    electrónicos.
-                  </p>
-                </article>
-                <article class="pestel-card">
-                  <h3>Sociales</h3>
-                  <p>
-                    Población joven con alto uso de smartphones y clientes que
-                    ya usan WhatsApp para comprar.
-                  </p>
-                </article>
-                <article class="pestel-card">
-                  <h3>Tecnológicos</h3>
-                  <p>
-                    Mayor cobertura de fibra óptica, nube híbrida, SaaS, IA y
-                    analítica.
-                  </p>
-                </article>
-                <article class="pestel-card">
-                  <h3>Ecológicos</h3>
-                  <p>
-                    Energía solar, virtualización y rutas optimizadas para
-                    reducir consumo y emisiones.
-                  </p>
-                </article>
-                <article class="pestel-card">
-                  <h3>Legales</h3>
-                  <p>
-                    Firma electrónica, protección de datos y digitalización
-                    tributaria y aduanera.
-                  </p>
-                </article>
-              </div>
-            </section>
-
-            <section class="slide" data-title="Amenazas y riesgos externos">
-              <div class="slide-header">
-                <p class="eyebrow">10 · Riesgos</p>
-                <h2>Amenazas del entorno externo</h2>
-              </div>
-              <div class="pestel-grid pestel-grid--threats">
-                <article class="pestel-card">
-                  <h3>Políticos</h3>
-                  <p>
-                    Incertidumbre comercial con EE. UU., posibles aranceles y
-                    cambios regulatorios poco previsibles.
-                  </p>
-                </article>
-                <article class="pestel-card">
-                  <h3>Económicos</h3>
-                  <p>
-                    Alzas del combustible, equipos pagos en dólares y presión
-                    inflacionaria sobre márgenes.
-                  </p>
-                </article>
-                <article class="pestel-card">
-                  <h3>Sociales</h3>
-                  <p>
-                    Migración de talento TI, brecha digital y resistencia al
-                    cambio en procesos tradicionales.
-                  </p>
-                </article>
-                <article class="pestel-card">
-                  <h3>Tecnológicos</h3>
-                  <p>
-                    Ransomware, phishing, dependencia de pocos proveedores y
-                    obsolescencia de equipos y licencias.
-                  </p>
-                </article>
-                <article class="pestel-card">
-                  <h3>Ecológicos</h3>
-                  <p>
-                    Actividad sísmica, huracanes, lluvias intensas, calor y
-                    cortes eléctricos.
-                  </p>
-                </article>
-                <article class="pestel-card">
-                  <h3>Legales</h3>
-                  <p>
-                    Responsabilidad por ciberdelitos, sanciones por protección
-                    de datos y auditorías de licenciamiento.
-                  </p>
-                </article>
-              </div>
-            </section>
-
-            <section
-              class="slide"
-              data-title="Situación tecnológica y nivel de madurez"
-            >
-              <div class="slide-header">
-                <p class="eyebrow">11 · TI</p>
-                <h2>Estado tecnológico y nivel de madurez</h2>
-              </div>
-              <div class="split-panel">
-                <article class="content-card">
-                  <h3>Nivel de madurez</h3>
-                  <p>
-                    Según la evolución del paradigma organizacional, DICOPSA
-                    está en la etapa 2:
-                    <strong>“SI como automatización”</strong>.
-                  </p>
-                  <p>
-                    En los siete peldaños está entre
-                    <strong>“Infraestructura”</strong> y
-                    <strong>“Automatizador”</strong>.
-                  </p>
-                </article>
-                <article class="content-card">
-                  <h3>Sistemas y datos</h3>
-                  <p>
-                    ERP on-premise, app de preventa, correo y ofimática en
-                    Microsoft 365. No hay CRM ni inteligencia de negocios; los
-                    reportes se arman a mano en Excel.
-                  </p>
-                </article>
-              </div>
-            </section>
-
-            <section
-              class="slide"
-              data-title="Organización del departamento de TI"
-            >
-              <div class="slide-header">
-                <p class="eyebrow">12 · Organización</p>
-                <h2>Equipo de TI y gobierno actual</h2>
-              </div>
-              <div class="feature-grid">
-                <article class="feature-card">
-                  <h3>Organización</h3>
-                  <p>
-                    4 personas: jefe de TI, 2 técnicos de soporte y 1 analista
-                    del ERP.
-                  </p>
-                </article>
-                <article class="feature-card">
-                  <h3>Dependencia</h3>
-                  <p>
-                    El área depende de la Gerencia Administrativa-Financiera,
-                    por lo que TI se percibe como centro de costos.
-                  </p>
-                </article>
-                <article class="feature-card">
-                  <h3>Gobierno</h3>
-                  <p>
-                    No existe PETI/PESI, ni marco COBIT 2019 o ISO/IEC 38500, ni
-                    gestión formal de riesgos basada en NIST CSF 2.0.
-                  </p>
-                </article>
-                <article class="feature-card">
-                  <h3>Lectura estratégica</h3>
-                  <p>
-                    Las decisiones tecnológicas son reactivas y no están
-                    integradas a la estrategia corporativa.
-                  </p>
-                </article>
-              </div>
-            </section>
-
-            <section
-              class="slide"
-              data-title="Infraestructura tecnológica actual"
-            >
-              <div class="slide-header">
-                <p class="eyebrow">13 · Infraestructura</p>
-                <h2>Arquitectura actual de red y servicios</h2>
-              </div>
-              <div class="two-column-layout">
-                <article class="content-card">
-                  <h3>Componentes principales</h3>
-                  <ul class="bullet-list">
-                    <li>Datacenter principal (MDF) en oficinas centrales.</li>
-                    <li>Cinco cuartos de comunicaciones (IDF).</li>
-                    <li>Red LAN estrella con cableado Cat6.</li>
-                    <li>
-                      Fibra óptica hacia la bodega y VPN sitio a sitio con
-                      sucursales.
-                    </li>
-                    <li>Servicios centralizados: AD, DNS y DHCP.</li>
-                  </ul>
-                </article>
-                <article class="content-card content-card--accent">
-                  <h3>Lectura operativa</h3>
-                  <p>
-                    La infraestructura es funcional, pero la continuidad depende
-                    de pocos puntos únicos de falla, especialmente en energía,
-                    climatización y respaldo fuera de sitio.
-                  </p>
-                </article>
-              </div>
-            </section>
-
-            <section
-              class="slide"
-              data-title="Inventario del datacenter principal (MDF)"
-            >
-              <div class="slide-header">
-                <p class="eyebrow">14 · MDF</p>
-                <h2>Inventario y ubicación del datacenter principal</h2>
-              </div>
-              <div class="table-card">
-                <table>
-                  <tbody>
-                    <tr>
-                      <th>Ubicación</th>
-                      <td>
-                        Edificio administrativo de oficinas centrales en
-                        Carretera Norte, km 6½, primer piso, sala cerrada de 3 ×
-                        4 m contigua a Contabilidad.
-                      </td>
-                    </tr>
-                    <tr>
-                      <th>Equipos</th>
-                      <td>
-                        2 racks de piso de 42U, 3 servidores físicos, 1 NAS de 8
-                        TB, firewall de nueva generación, switch core capa 3,
-                        dos enlaces de Internet, patch panels Cat6, UPS de 6
-                        kVA, aire acondicionado y cámara de vigilancia.
-                      </td>
-                    </tr>
-                    <tr>
-                      <th>Fortalezas</th>
-                      <td>
-                        Sala dedicada y cerrada, doble enlace de Internet, VPN a
-                        sucursales, UPS con respaldo diario al NAS y servicios
-                        de red centralizados.
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </section>
-
-            <section
-              class="slide"
-              data-title="Inventario de los cuartos de comunicaciones (IDF)"
-            >
-              <div class="slide-header">
-                <p class="eyebrow">15 · IDF</p>
-                <h2>Cuartos de comunicaciones y sucursales</h2>
-              </div>
-              <div class="card-grid card-grid--two">
-                <article class="content-card">
-                  <h3>IDF-1 e IDF-2</h3>
-                  <p>
-                    IDF-1 en el segundo piso del edificio administrativo con
-                    gabinete de pared de 12U, switch PoE, patch panel Cat6, UPS
-                    de 1.5 kVA y 4 puntos de acceso Wi‑Fi.
-                  </p>
-                  <p>
-                    IDF-2 en el centro de distribución, en el área de despacho,
-                    con gabinete 18U, switch PoE, convertidor de medios, enlace
-                    de fibra al MDF, 3 puntos de acceso para escáneres y UPS de
-                    1 kVA.
-                  </p>
-                </article>
-                <article class="content-card">
-                  <h3>IDF-3, IDF-4 y IDF-5</h3>
-                  <p>
-                    Ubicados en las oficinas de León, Masaya y Chinandega, con
-                    gabinete de pared 9U, router-firewall con VPN, switch de 16
-                    puertos, 1 punto de acceso, UPS de 1 kVA y enlace de
-                    Internet de 50 Mbps.
-                  </p>
-                  <p>La VPN permite facturar en el ERP en tiempo real.</p>
-                </article>
-              </div>
-            </section>
-
-            <section
-              class="slide"
-              data-title="Fortalezas, debilidades y posibles fallos"
-            >
-              <div class="slide-header">
-                <p class="eyebrow">16 · Diagnóstico</p>
-                <h2>Lectura crítica de la infraestructura</h2>
-              </div>
-              <div class="three-panel-layout">
-                <article class="content-card">
-                  <h3>Fortalezas</h3>
-                  <ul class="bullet-list compact-list">
-                    <li>Flota propia y enlace de fibra entre MDF y bodega.</li>
-                    <li>Switches administrables con PoE.</li>
-                    <li>Equipos relativamente nuevos en las sedes.</li>
-                  </ul>
-                </article>
-                <article class="content-card">
-                  <h3>Debilidades</h3>
-                  <ul class="bullet-list compact-list">
-                    <li>Un solo aire acondicionado sin redundancia.</li>
-                    <li>UPS con poca autonomía y sin planta eléctrica.</li>
-                    <li>Respaldos solo dentro del mismo edificio.</li>
-                    <li>
-                      Red plana sin VLANs y gabinetes sin llave en sucursales.
-                    </li>
-                  </ul>
-                </article>
-                <article class="content-card content-card--accent">
-                  <h3>Posibles fallos</h3>
-                  <ul class="bullet-list compact-list">
-                    <li>Sobrecalentamiento y apagado de servidores.</li>
-                    <li>
-                      Caída del ERP por corte eléctrico o falla del servidor.
-                    </li>
-                    <li>Ransomware que cifre servidores y NAS.</li>
-                    <li>
-                      Pérdida total de datos por sismo o incendio sin copia
-                      fuera de sitio.
-                    </li>
-                  </ul>
-                </article>
-              </div>
-            </section>
-
-            <section
-              class="slide"
-              data-title="Áreas de mejora y recomendaciones"
-            >
-              <div class="slide-header">
-                <p class="eyebrow">17 · Recomendaciones</p>
-                <h2>Áreas de mejora priorizadas</h2>
-              </div>
-              <div class="roadmap">
-                <article class="roadmap-step">
-                  <span>1</span>
-                  <p>
-                    Climatización redundante con sensores ambientales y alertas.
-                  </p>
-                </article>
-                <article class="roadmap-step">
-                  <span>2</span>
-                  <p>
-                    UPS de mayor autonomía y planta eléctrica con transferencia
-                    automática.
-                  </p>
-                </article>
-                <article class="roadmap-step">
-                  <span>3</span>
-                  <p>
-                    Virtualización en clúster con alta disponibilidad y respaldo
-                    3-2-1 con copia en la nube.
-                  </p>
-                </article>
-                <article class="roadmap-step">
-                  <span>4</span>
-                  <p>
-                    Segmentación por VLANs, monitoreo SNMP, control de acceso
-                    biométrico y CCTV.
-                  </p>
-                </article>
-                <article class="roadmap-step">
-                  <span>5</span>
-                  <p>
-                    Reubicar o proteger el IDF-2 y habilitar enlaces secundarios
-                    4G/LTE o SD-WAN en sucursales.
-                  </p>
-                </article>
-              </div>
-            </section>
-
-            <section
-              class="slide"
-              data-title="Certificaciones y síntesis del diagnóstico"
-            >
-              <div class="slide-header">
-                <p class="eyebrow">18 · Cierre técnico</p>
-                <h2>Certificaciones y síntesis del diagnóstico</h2>
-              </div>
-              <div class="split-panel">
-                <article class="content-card">
-                  <h3>Certificaciones</h3>
-                  <p>
-                    No cuenta con certificación. Como meta a mediano plazo se
-                    propone un diseño bajo ANSI/TIA-942 y un sistema de gestión
-                    de seguridad de la información basado en ISO/IEC 27001. El
-                    cableado Cat6 se instaló sin pruebas de certificación bajo
-                    ANSI/TIA-568.
-                  </p>
-                </article>
-                <article class="content-card content-card--accent">
-                  <h3>Síntesis del diagnóstico</h3>
-                  <p>
-                    DICOPSA tiene una posición comercial sólida y una
-                    infraestructura de red funcional, pero la tecnología aún se
-                    gestiona como centro de costos y no como parte de la
-                    estrategia. El principal punto crítico es la continuidad del
-                    negocio.
-                  </p>
-                </article>
-              </div>
-            </section>
-
-            <section class="slide" data-title="Conclusiones y preguntas">
-              <div class="slide-header">
-                <p class="eyebrow">19 · Cierre</p>
-                <h2>Conclusiones y espacio para preguntas</h2>
-              </div>
-              <div class="feature-grid">
-                <article class="feature-card">
-                  <h3>Conclusión 1</h3>
-                  <p>
-                    DICOPSA compite con una base comercial fuerte y cobertura
-                    regional consolidada.
-                  </p>
-                </article>
-                <article class="feature-card">
-                  <h3>Conclusión 2</h3>
-                  <p>
-                    La TI actual soporta la operación, pero necesita pasar de
-                    soporte reactivo a soporte estratégico.
-                  </p>
-                </article>
-                <article class="feature-card">
-                  <h3>Conclusión 3</h3>
-                  <p>
-                    La continuidad operativa y la integración de datos deben
-                    priorizarse antes de adoptar tecnologías más avanzadas.
-                  </p>
-                </article>
-                <article class="feature-card">
-                  <h3>Preguntas</h3>
-                  <p>
-                    ¿Qué iniciativa tendría el mayor impacto si se ejecuta
-                    primero en el corto plazo?
-                  </p>
-                </article>
-              </div>
-            </section>
+        <section id="empresa" class="site-section">
+          <div class="container">
+            <div class="section-heading">
+              <p class="eyebrow">La empresa</p>
+              <h2>Perfil general de DICOPSA</h2>
+            </div>
+            <div id="company-timeline" class="timeline-grid"></div>
+            <div id="company-cards" class="card-grid"></div>
           </div>
-        </div>
+        </section>
+
+        <section id="estrategia" class="site-section site-section--alt">
+          <div class="container">
+            <div class="section-heading">
+              <p class="eyebrow">Análisis estratégico</p>
+              <h2>Diagnóstico del entorno y la posición competitiva</h2>
+            </div>
+
+            <div class="table-shell">
+              <h3>PESTEL</h3>
+              <div id="pestel-table"></div>
+            </div>
+
+            <div class="swot-grid">
+              <div class="swot-panel">
+                <h3>Fortalezas</h3>
+                <div id="strengths-list" class="list-grid"></div>
+              </div>
+              <div class="swot-panel">
+                <h3>Oportunidades</h3>
+                <div id="opportunities-list" class="list-grid"></div>
+              </div>
+              <div class="swot-panel">
+                <h3>Debilidades</h3>
+                <div id="weaknesses-list" class="list-grid"></div>
+              </div>
+              <div class="swot-panel">
+                <h3>Amenazas</h3>
+                <div id="threats-list" class="list-grid"></div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="infraestructura" class="site-section">
+          <div class="container">
+            <div class="section-heading">
+              <p class="eyebrow">Infraestructura</p>
+              <h2>Infraestructura tecnológica y operación actual</h2>
+            </div>
+
+            <div id="tech-summary" class="card-grid"></div>
+            <div class="table-shell">
+              <h3>Inventario del MDF</h3>
+              <div id="mdf-table"></div>
+            </div>
+            <div id="idf-cards" class="card-grid"></div>
+
+            <div class="two-col-layout">
+              <div class="panel-block">
+                <h3>Fortalezas operativas</h3>
+                <ul id="infra-strengths" class="bullet-list"></ul>
+              </div>
+              <div class="panel-block">
+                <h3>Debilidades críticas</h3>
+                <ul id="infra-weaknesses" class="bullet-list"></ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="riesgos" class="site-section site-section--alt">
+          <div class="container">
+            <div class="section-heading">
+              <p class="eyebrow">Riesgos</p>
+              <h2>Impactos y amenazas clave</h2>
+            </div>
+            <div id="risk-cards" class="card-grid"></div>
+
+            <div class="two-col-layout">
+              <div class="panel-block">
+                <h3>Riesgos operativos en sucursales</h3>
+                <ul id="branch-risks" class="bullet-list"></ul>
+              </div>
+              <div class="panel-block">
+                <h3>Impacto en continuidad del negocio</h3>
+                <ul id="continuity-impact" class="bullet-list"></ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="mejora" class="site-section">
+          <div class="container">
+            <div class="section-heading">
+              <p class="eyebrow">Plan de mejora</p>
+              <h2>Ruta de transformación tecnológica y operativa</h2>
+            </div>
+            <div id="roadmap" class="roadmap-grid"></div>
+          </div>
+        </section>
+
+        <section id="diagnostico" class="site-section site-section--alt">
+          <div class="container">
+            <div class="section-heading">
+              <p class="eyebrow">Diagnóstico</p>
+              <h2>Conclusiones y prioridades</h2>
+            </div>
+            <div id="diagnosis-cards" class="card-grid"></div>
+
+            <div class="two-col-layout">
+              <div class="panel-block">
+                <h3>Propuestas de monitoreo</h3>
+                <ul id="monitoring-list" class="bullet-list"></ul>
+              </div>
+              <div class="panel-block">
+                <h3>Propuestas de seguridad</h3>
+                <ul id="security-list" class="bullet-list"></ul>
+              </div>
+            </div>
+          </div>
+        </section>
       </main>
+
+      <footer id="site-footer" class="site-footer">
+        <div class="container site-footer__inner">
+          <div>
+            <a class="brand brand--footer" href="#inicio">
+              <span class="brand__mark">D</span>
+              <span class="brand__text">DICOPSA</span>
+            </a>
+            <p class="site-footer__text"></p>
+          </div>
+
+          <nav class="site-footer__nav" aria-label="Enlaces del sitio">
+            <ul data-site-footer-nav class="site-footer__list"></ul>
+          </nav>
+
+          <p class="site-footer__meta">
+            © <span data-current-year></span> DICOPSA
+          </p>
+        </div>
+      </footer>
     </div>
+
+    <button type="button" class="to-top" data-to-top aria-label="Volver arriba">
+      ↑
+    </button>
 
     <script type="module" src="/src/js/main.js"></script>
   </body>

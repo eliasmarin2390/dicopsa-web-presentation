@@ -1,24 +1,29 @@
 # Architecture
 
-The project is organized as a small but real modular front-end application.
+The project is organized as a modular front-end application for a static corporate website powered by Vite and ES Modules.
 
 ## Layers
 
-- `index.html` contains the reveal deck structure and the persistent presentation chrome.
-- `src/js/presentation` coordinates initialization, navigation and event binding.
-- `src/js/components` isolates reusable UI logic such as the counter, progress bar and table of contents.
-- `src/js/utils` contains small DOM and accessibility helpers.
-- `src/css` is split by responsibility: base, layout, components and slide-specific sections.
+- `index.html` defines the semantic shell, section anchors and placeholder containers for dynamic rendering.
+- `src/js/main.js` is the application entry point and orchestrates rendering.
+- `src/components` contains reusable render modules (cards, tables, timeline, navbar, footer).
+- `src/data` stores structured domain content used by the UI.
+- `src/js` contains interaction logic (scroll spy, back-to-top, reduced-motion handling).
+- `src/utils` centralizes shared DOM and accessibility helpers.
+- `src/js/presentation` and `src/js/components` keep legacy Reveal.js modules used by unit tests and backward compatibility.
+- `src/css` contains global styles and support styles grouped by responsibility.
 
 ## Data flow
 
-1. `main.js` loads the CSS and starts the application.
-2. `initializePresentation()` builds the deck, renders the table of contents and wires controls.
-3. Reveal.js emits slide events and the app updates the counter, progress bar and active TOC item.
+1. `main.js` loads global CSS and waits for `DOMContentLoaded`.
+2. Render modules fill each section container using datasets from `src/data`.
+3. Interaction modules activate navigation highlighting and UX helpers.
+4. Legacy presentation modules remain independent from the main site bootstrap.
 
 ## Design decisions
 
-- Reveal.js is used as the presentation engine because it already solves slide navigation, keyboard support and print-friendly output.
-- Vite is used to resolve ES modules, optimize the build and support GitHub Pages deployment.
-- The content is written directly in semantic HTML because the project is a presentation, not a data-heavy application.
-- Tests focus on the logic that can be validated deterministically in Node and jsdom.
+- Vite is used to bundle ES modules, provide local development and optimize production builds.
+- The current site architecture favors explicit, framework-free rendering modules for maintainability and low complexity.
+- Data is separated from rendering to keep content updates independent from UI behavior.
+- Shared helpers live in one utility layer to avoid duplicated logic.
+- Tests focus on deterministic logic modules and legacy presentation compatibility paths.

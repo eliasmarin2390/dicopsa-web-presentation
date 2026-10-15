@@ -1,6 +1,6 @@
-# DICOPSA Web Presentation
+# DICOPSA Corporate Website
 
-Presentación web interactiva, basada en Reveal.js, sobre el avance I del proyecto de Planificación Estratégica y Organización Informática aplicado a Distribuidora Comercial del Pacífico, S.A. (DICOPSA).
+Sitio web corporativo interactivo para presentar el diagnóstico estratégico y tecnológico de Distribuidora Comercial del Pacífico, S.A. (DICOPSA).
 
 ## Objetivo académico
 
@@ -41,20 +41,22 @@ npm run test
 
 ## Estructura de carpetas
 
-- `index.html`: punto de entrada de la presentación.
-- `src/js`: módulos de inicialización, navegación, eventos y componentes.
-- `src/css`: diseño base, componentes y estilos por sección.
+- `index.html`: punto de entrada del sitio.
+- `src/components`: componentes renderizables reutilizables (cards, tablas, timeline, navbar, footer).
+- `src/data`: datos empresariales y contenido estructurado de DICOPSA.
+- `src/js`: orquestación de la aplicación y lógica de interacción.
+- `src/js/presentation`: módulos heredados de presentación Reveal.js conservados para compatibilidad y pruebas.
+- `src/utils`: utilidades compartidas de DOM y accesibilidad.
+- `src/css`: estilos base y estilos de interfaz.
 - `tests`: pruebas unitarias con Vitest.
 - `docs`: arquitectura, contenido fuente y flujo Git.
 
-## Controles y atajos
+## Interacción principal
 
-- Flechas izquierda y derecha: navegar entre diapositivas.
-- Botones anterior y siguiente: navegación principal.
-- Botón índice: abrir y cerrar la tabla de contenidos.
-- Botón pantalla completa: alternar modo fullscreen.
-- `Esc`: cerrar el índice.
-- `Home` / `End`: navegación estándar de Reveal.js.
+- Navegación por anclas entre secciones (`#inicio`, `#empresa`, etc.).
+- Menú responsive con apertura/cierre en móviles.
+- Resaltado de sección activa mediante scroll spy.
+- Botón flotante para volver al inicio de la página.
 
 ## Contribución
 
@@ -69,7 +71,7 @@ npm run test
 
 Ejemplos:
 
-- `feat(presentation): add interactive slide navigation`
+- `feat(site): add section navigation and dynamic content rendering`
 - `feat(content): add DICOPSA profile slides`
 - `test(navigation): cover progress and counter updates`
 - `docs: add architecture and content source notes`

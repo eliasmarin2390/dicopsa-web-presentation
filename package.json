@@ -1,9 +1,9 @@
 {
-  "name": "dicopsa-web-presentation",
+  "name": "dicopsa-corporate-website",
   "version": "1.0.0",
   "private": true,
   "type": "module",
-  "description": "Presentación web interactiva sobre el análisis estratégico y tecnológico de DICOPSA.",
+  "description": "Sitio web corporativo interactivo basado en el diagnóstico estratégico y tecnológico de DICOPSA.",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -15,9 +15,6 @@
     "test:watch": "vitest",
     "check": "npm run lint && npm run format:check && npm run test && npm run build"
   },
-  "dependencies": {
-    "reveal.js": "6.0.2"
-  },
   "devDependencies": {
     "@eslint/js": "10.0.1",
     "eslint": "10.12.0",
@@ -26,5 +23,8 @@
     "prettier": "3.9.10",
     "vite": "8.3.4",
     "vitest": "5.0.4"
+  },
+  "dependencies": {
+    "reveal.js": "^6.0.2"
   }
 }

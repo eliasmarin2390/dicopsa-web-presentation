@@ -1,4 +1,4 @@
-import { createElement } from '../utils/dom.js';
+import { createElement } from '../../utils/dom.js';
 
 export function extractNavigationItems(slides) {
   return slides

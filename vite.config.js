@@ -1,7 +1,7 @@
 import { defineConfig } from 'vite';
 
 export default defineConfig({
-  base: '/dicopsa-web-presentation/',
+  base: '/dicopsa-corporate-website/',
   test: {
     environment: 'jsdom',
     globals: true,

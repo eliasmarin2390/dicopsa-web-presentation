@@ -34,3 +34,7 @@ export function createElement(
 
   return element;
 }
+
+export function clearElement(element) {
+  element.replaceChildren();
+}
