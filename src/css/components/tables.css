@@ -1,0 +1,16 @@
+.toc-list {
+  display: grid;
+}
+
+.table-card {
+  overflow: auto;
+}
+
+.table-card tr:last-child th,
+.table-card tr:last-child td {
+  border-bottom: 0;
+}
+
+.table-card td strong {
+  color: var(--color-text);
+}

@@ -1,0 +1,13 @@
+@import url('./base/reset.css');
+@import url('./base/variables.css');
+@import url('./base/typography.css');
+@import url('./layout/presentation.css');
+@import url('./layout/responsive.css');
+@import url('./components/controls.css');
+@import url('./components/cards.css');
+@import url('./components/charts.css');
+@import url('./components/tables.css');
+@import url('./slides/cover.css');
+@import url('./slides/company-profile.css');
+@import url('./slides/pestel.css');
+@import url('./slides/infrastructure.css');

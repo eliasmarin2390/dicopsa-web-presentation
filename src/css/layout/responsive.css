@@ -1,0 +1,44 @@
+@media (max-width: 1100px) {
+  .presentation-toolbar {
+    grid-template-columns: 1fr;
+    justify-items: start;
+  }
+
+  .toolbar-status {
+    justify-items: start;
+  }
+
+  .reveal {
+    height: auto;
+    min-height: 0;
+  }
+
+  .two-column-layout,
+  .split-panel,
+  .three-panel-layout,
+  .feature-grid,
+  .stats-grid,
+  .card-grid,
+  .pestel-grid,
+  .roadmap {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 720px) {
+  .presentation-main {
+    padding: 0.75rem;
+  }
+
+  .slide {
+    padding: 1.25rem;
+  }
+
+  .toolbar-actions {
+    justify-content: flex-start;
+  }
+
+  .timeline-item {
+    grid-template-columns: 1fr;
+  }
+}

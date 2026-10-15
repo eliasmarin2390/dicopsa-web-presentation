@@ -1,0 +1,45 @@
+.slide--cover {
+  display: grid;
+  place-items: center;
+  min-height: 100%;
+}
+
+.cover-layout {
+  display: grid;
+  justify-items: center;
+  gap: 1rem;
+  max-width: 900px;
+  text-align: center;
+}
+
+.cover-layout__eyebrow,
+.cover-layout__lead {
+  color: var(--color-muted);
+}
+
+.cover-layout h1 {
+  max-width: 12ch;
+}
+
+.cover-badge {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 11rem;
+  height: 11rem;
+  margin-bottom: 0.5rem;
+}
+
+.cover-badge__ring {
+  position: absolute;
+  inset: 0;
+  border: 2px solid rgba(255, 77, 196, 0.45);
+  border-radius: 50%;
+}
+
+.cover-badge__mono {
+  color: var(--color-accent);
+  font-size: 2.4rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+}

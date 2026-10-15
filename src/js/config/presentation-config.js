@@ -1,0 +1,22 @@
+export const presentationConfig = {
+  title: 'DICOPSA | Planificación Estratégica y Organización Informática',
+  transition: 'slide',
+  backgroundTransition: 'fade',
+  controls: false,
+  progress: false,
+  hash: true,
+  hashOneBasedIndex: true,
+  center: false,
+  width: 1280,
+  height: 720,
+  margin: 0.05,
+  display: 'block',
+  keyboard: true,
+  overview: true,
+  touch: true,
+  embedded: true,
+  fragments: true,
+  autoPlayMedia: false,
+  pause: true,
+  viewDistance: 3
+};

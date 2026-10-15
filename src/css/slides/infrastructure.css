@@ -1,0 +1,9 @@
+.three-panel-layout .content-card {
+  min-height: 100%;
+}
+
+.feature-card,
+.pestel-card,
+.roadmap-step {
+  border-radius: var(--radius-lg);
+}

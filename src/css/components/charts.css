@@ -1,0 +1,28 @@
+.pestel-card {
+  min-height: 10.5rem;
+}
+
+.pestel-card h3 {
+  color: var(--color-accent);
+}
+
+.pestel-grid--threats .pestel-card h3 {
+  color: var(--color-warning);
+}
+
+.roadmap-step {
+  position: relative;
+  min-height: 9rem;
+}
+
+.roadmap-step span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 999px;
+  background: var(--color-accent);
+  color: #fff;
+  font-weight: 700;
+}
