@@ -17,6 +17,26 @@ Presentar, de forma clara y profesional, el análisis del perfil de la empresa, 
 - ESLint.
 - Prettier.
 
+## Inicio rápido
+
+1. Instala [Node.js LTS](https://nodejs.org/), que incluye `npm`.
+2. Clona el repositorio y abre la carpeta `dicopsa-corporate-website` en VS Code.
+3. Instala las dependencias una sola vez:
+
+```bash
+npm install
+```
+
+4. Inicia el proyecto desde **Terminal > Run Task > DICOPSA: Iniciar en Google Chrome**.
+
+La aplicación se abrirá en:
+
+```text
+http://localhost:5173/dicopsa-corporate-website/
+```
+
+Como alternativa, ejecuta `npm run dev` desde la terminal integrada de VS Code.
+
 ## Requisitos previos
 
 - Node.js LTS (recomendado 20 o superior)
