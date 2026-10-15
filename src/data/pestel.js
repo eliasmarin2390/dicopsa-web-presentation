@@ -91,74 +91,21 @@ export const pestelRows = [
   }
 ];
 
-export const swotData = {
-  strengths: [
-    {
-      title: '22 años de trayectoria',
-      text: 'Buena reputación y presencia sostenida en el mercado.'
-    },
-    {
-      title: 'Cobertura regional',
-      text: 'Sucursales propias en toda la región del Pacífico.'
-    },
-    {
-      title: 'Flota propia',
-      text: 'Capacidad de reparto y control logístico directo.'
-    },
-    {
-      title: 'Base tecnológica existente',
-      text: 'ERP transaccional y app de preventa ya implementados.'
-    }
-  ],
-  opportunities: [
-    {
-      title: 'Canal B2B digital',
-      text: 'Pedidos web y por WhatsApp para los comercios.'
-    },
-    {
-      title: 'Analítica de datos',
-      text: 'Uso del ERP para predecir demanda y reducir inventario inmovilizado.'
-    },
-    {
-      title: 'Expansión territorial',
-      text: 'Posible crecimiento hacia la zona norte y central del país.'
-    },
-    {
-      title: 'Nube híbrida',
-      text: 'Respaldos y continuidad del negocio con soporte externo.'
-    }
-  ],
-  weaknesses: [
-    {
-      title: 'TI reactiva',
-      text: 'Se compra tecnología cuando algo falla o cuando un área lo pide.'
-    },
-    {
-      title: 'Sin alta disponibilidad',
-      text: 'El ERP corre en un único servidor.'
-    },
-    { title: 'Respaldos locales', text: 'No salen del edificio.' },
-    {
-      title: 'Sin gobierno formal',
-      text: 'No existe PETI/PESI ni marco de gobierno definido.'
-    }
-  ],
-  threats: [
-    {
-      title: 'Combustible e importación',
-      text: 'El alza en estos costos presiona el margen y la logística.'
-    },
-    {
-      title: 'Ciberataques',
-      text: 'Ransomware y phishing pueden detener facturación y despacho.'
-    },
-    {
-      title: 'Desastres naturales',
-      text: 'Sismos, huracanes y lluvias intensas impactan la continuidad.'
-    },
-    {
-      title: 'Obsolescencia',
-      text: 'Equipos y licencias envejecen rápidamente sin renovación planificada.'
-    }
-  ]
-};
+// FODA: fortalezas y oportunidades vienen de company.js; aquí van debilidades y amenazas del documento.
+export const swotWeaknesses = [
+  'TI reactiva: se compra tecnología cuando algo falla o cuando un área lo pide.',
+  'ERP en un único servidor, sin alta disponibilidad.',
+  'Respaldos solo dentro del mismo edificio.',
+  'Sin PETI/PESI, sin marco de gobierno ni gestión formal de riesgos.',
+  'Reportes gerenciales manuales en Excel y sin CRM ni inteligencia de negocios.',
+  'Redes y accesos sin segmentar ni control físico completo en los gabinetes.'
+];
+
+export const swotThreats = [
+  'Alza del combustible e importación: presiona el costo logístico y el margen.',
+  'Ciberataques (ransomware y phishing) que podrían detener facturación y despacho.',
+  'Sismos, huracanes y lluvias intensas en temporada.',
+  'Cambios regulatorios poco previsibles e incertidumbre comercial con EE. UU.',
+  'Migración de talento TI y brecha de habilidades digitales.',
+  'Obsolescencia rápida de equipos y licencias.'
+];

@@ -1,10 +1,12 @@
-export function applyReducedMotionClass(root = document.documentElement) {
-  const mediaQuery =
-    typeof window.matchMedia === 'function'
-      ? window.matchMedia('(prefers-reduced-motion: reduce)')
-      : null;
+export function prefersReducedMotion() {
+  return (
+    typeof window.matchMedia === 'function' &&
+    window.matchMedia('(prefers-reduced-motion: reduce)').matches
+  );
+}
 
-  root.classList.toggle('reduce-motion', Boolean(mediaQuery?.matches));
+export function applyReducedMotionClass(root = document.documentElement) {
+  root.classList.toggle('reduce-motion', prefersReducedMotion());
 }
 
 export function setupBackToTop(button) {
@@ -13,7 +15,10 @@ export function setupBackToTop(button) {
   };
 
   button.addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({
+      top: 0,
+      behavior: prefersReducedMotion() ? 'auto' : 'smooth'
+    });
   });
 
   window.addEventListener('scroll', toggle, { passive: true });

@@ -2,13 +2,15 @@ export const siteTitle =
   'DICOPSA | Sitio corporativo y diagnóstico estratégico';
 
 export const siteNavigation = [
-  { href: '#inicio', label: 'Inicio' },
-  { href: '#empresa', label: 'La empresa' },
-  { href: '#estrategia', label: 'Análisis estratégico' },
-  { href: '#infraestructura', label: 'Infraestructura' },
+  { href: '#perfil', label: 'Perfil' },
+  { href: '#entorno', label: 'Entorno' },
+  { href: '#tecnologia', label: 'Tecnología' },
+  { href: '#pestel', label: 'PESTEL' },
+  { href: '#foda', label: 'FODA' },
+  { href: '#interno', label: 'Infraestructura' },
   { href: '#riesgos', label: 'Riesgos' },
-  { href: '#mejora', label: 'Plan de mejora' },
-  { href: '#diagnostico', label: 'Diagnóstico' }
+  { href: '#mejora', label: 'Mejora' },
+  { href: '#sintesis', label: 'Síntesis' }
 ];
 
 export const siteFooter = {

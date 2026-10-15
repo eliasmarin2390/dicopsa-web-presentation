@@ -1,39 +1,145 @@
 import '../css/main.css';
 import { renderCards } from '../components/cards.js';
 import { renderFooter } from '../components/footer.js';
+import { renderKpis } from '../components/kpis.js';
 import { renderNavbar } from '../components/navbar.js';
-import { renderTable } from '../components/tables.js';
 import { renderTimeline } from '../components/timeline.js';
-import { companyCards, companyTimeline, heroKPIs } from '../data/company.js';
-import { diagnosisCards } from '../data/diagnosis.js';
+import { renderTabs } from '../components/tabs.js';
+import { renderPestelPanel, renderSpecRows } from '../components/analysis.js';
 import {
-  infraStrengths,
-  infraSummaryCards,
-  infraWeaknesses,
-  idfCards,
-  mdfInventory,
-  monitoringProposals,
-  securityProposals
+  competition,
+  companyCards,
+  companyOpportunities,
+  companyProfile,
+  companyStrengths,
+  currentSituation,
+  economicResponse,
+  economicResponseNote,
+  futureSituation,
+  heroKPIs,
+  companyTimeline,
+  externalRisk,
+  suppliers
+} from '../data/company.js';
+import {
+  branchRisks,
+  diagnosisRisks,
+  diagnosisSynthesis,
+  managementQuestions,
+  nextStep
+} from '../data/diagnosis.js';
+import {
+  internalAnalysis,
+  techMaturity,
+  techSummary
 } from '../data/infrastructure.js';
-import { pestelRows, swotData } from '../data/pestel.js';
+import { projectCover } from '../data/project.js';
+import { pestelRows, swotThreats, swotWeaknesses } from '../data/pestel.js';
 import { improvementRoadmap } from '../data/recommendations.js';
 import { siteFooter, siteNavigation, siteTitle } from '../data/site.js';
 import { applyReducedMotionClass, setupBackToTop } from './interactions.js';
+import { setupCounters } from './effects/counters.js';
+import { setupReveal } from './effects/reveal.js';
+import {
+  setupParallax,
+  setupScrollProgress,
+  setupSectionProgress
+} from './effects/scroll.js';
 import { setupScrollSpy } from './navigation.js';
-import { queryAll, queryRequired } from '../utils/dom.js';
+import { createElement, queryAll, queryRequired } from '../utils/dom.js';
 
 function renderList(listElement, items) {
-  listElement.replaceChildren();
+  listElement.replaceChildren(
+    ...items.map((item) => createElement('li', { textContent: item }))
+  );
+}
 
-  const fragment = document.createDocumentFragment();
+function renderCoverMeta(element) {
+  const { team, teacher, date, place } = projectCover;
+  element.textContent = `${team.join(' · ')} · Docente: ${teacher} · ${date} · ${place}`;
+}
 
-  items.forEach((item) => {
-    const listItem = document.createElement('li');
-    listItem.textContent = item;
-    fragment.append(listItem);
-  });
+function renderExternalRisk(container, risk) {
+  container.replaceChildren(
+    createElement('h3', { textContent: risk.title }),
+    createElement('p', { className: 'body-text', textContent: risk.text })
+  );
+  const list = createElement('ul', { className: 'bullet-list' });
+  renderList(list, risk.points);
+  container.append(list);
+}
 
-  listElement.append(fragment);
+function renderQuestions(listElement, questions) {
+  listElement.replaceChildren(
+    ...questions.map((question) => {
+      const item = createElement('li', { className: 'question' });
+      item.append(
+        createElement('strong', { textContent: question.title }),
+        createElement('span', { textContent: question.text })
+      );
+      return item;
+    })
+  );
+}
+
+function renderSituation() {
+  renderCards(
+    queryRequired('#situation-cards'),
+    [
+      {
+        title: currentSituation.title,
+        text: currentSituation.text,
+        points: [currentSituation.note]
+      },
+      {
+        title: futureSituation.title,
+        text: futureSituation.text,
+        points: futureSituation.points
+      }
+    ],
+    { variant: 'feature' }
+  );
+}
+
+function renderPestel() {
+  renderTabs(
+    queryRequired('#pestel-tabs'),
+    pestelRows.map((row) => ({
+      label: row.label,
+      render: (panel) => renderPestelPanel(panel, row)
+    }))
+  );
+}
+
+function renderInternal() {
+  renderTabs(queryRequired('#internal-tabs'), [
+    {
+      label: internalAnalysis.mdf.label,
+      render: (panel) => renderSpecRows(panel, internalAnalysis.mdf.rows)
+    },
+    {
+      label: internalAnalysis.idf.label,
+      render: (panel) => renderSpecRows(panel, internalAnalysis.idf.rows)
+    }
+  ]);
+}
+
+function renderMaturity() {
+  queryRequired('#maturity-stage').textContent =
+    `Etapa ${techMaturity.stage} · ${techMaturity.stageLabel}`;
+  queryRequired('#maturity-text').textContent = techMaturity.text;
+  queryRequired('#maturity-from').textContent = techMaturity.scale.from;
+  queryRequired('#maturity-to').textContent = techMaturity.scale.to;
+  queryRequired('#maturity-note').textContent = techMaturity.scale.note;
+}
+
+function renderSynthesis() {
+  queryRequired('#loop-name').textContent = diagnosisSynthesis.loop;
+  queryRequired('#loop-step').textContent = diagnosisSynthesis.step;
+  queryRequired('#critical-points').textContent =
+    diagnosisSynthesis.criticalPoints;
+  queryRequired('#next-step-text').textContent = nextStep.text;
+  renderQuestions(queryRequired('#mgmt-questions'), managementQuestions);
 }
 
 function bootstrap() {
@@ -42,48 +148,58 @@ function bootstrap() {
 
   renderNavbar(queryRequired('#site-header'), siteNavigation);
   renderFooter(queryRequired('#site-footer'), siteFooter, siteNavigation);
+  renderCoverMeta(queryRequired('#cover-meta'));
 
-  renderCards(queryRequired('#home-kpis'), heroKPIs, { variant: 'summary' });
+  renderKpis(queryRequired('#home-kpis'), heroKPIs);
+  queryRequired('#company-profile-text').textContent =
+    `${companyProfile.location} ${companyProfile.branches}`;
   renderTimeline(queryRequired('#company-timeline'), companyTimeline);
   renderCards(queryRequired('#company-cards'), companyCards, {
     variant: 'feature'
   });
-  renderTable(queryRequired('#pestel-table'), pestelRows);
-  renderCards(queryRequired('#strengths-list'), swotData.strengths, {
+
+  renderSituation();
+  renderList(queryRequired('#economic-response'), economicResponse);
+  queryRequired('#economic-note').textContent = economicResponseNote;
+  renderCards(queryRequired('#competition-cards'), competition, {
     variant: 'list'
   });
-  renderCards(queryRequired('#opportunities-list'), swotData.opportunities, {
-    variant: 'list'
-  });
-  renderCards(queryRequired('#weaknesses-list'), swotData.weaknesses, {
-    variant: 'list'
-  });
-  renderCards(queryRequired('#threats-list'), swotData.threats, {
-    variant: 'list'
-  });
-  renderCards(queryRequired('#tech-summary'), infraSummaryCards, {
+  renderCards(queryRequired('#supplier-cards'), suppliers, {
     variant: 'feature'
   });
-  renderTable(queryRequired('#mdf-table'), mdfInventory);
-  renderCards(queryRequired('#idf-cards'), idfCards, { variant: 'feature' });
-  renderList(queryRequired('#infra-strengths'), infraStrengths);
-  renderList(queryRequired('#infra-weaknesses'), infraWeaknesses);
-  renderCards(queryRequired('#risk-cards'), diagnosisCards.risks, {
+
+  renderMaturity();
+  renderCards(queryRequired('#tech-summary'), techSummary, {
     variant: 'feature'
   });
-  renderList(queryRequired('#branch-risks'), diagnosisCards.branchRisks);
-  renderList(
-    queryRequired('#continuity-impact'),
-    diagnosisCards.continuityImpact
-  );
+
+  renderPestel();
+
+  renderList(queryRequired('#swot-strengths'), companyStrengths);
+  renderList(queryRequired('#swot-opportunities'), companyOpportunities);
+  renderList(queryRequired('#swot-weaknesses'), swotWeaknesses);
+  renderList(queryRequired('#swot-threats'), swotThreats);
+
+  renderInternal();
+
+  renderCards(queryRequired('#risk-cards'), diagnosisRisks, {
+    variant: 'feature'
+  });
+  renderList(queryRequired('#branch-risks'), branchRisks);
+  renderExternalRisk(queryRequired('#external-risk'), externalRisk);
+
   renderCards(queryRequired('#roadmap'), improvementRoadmap, {
     variant: 'roadmap'
   });
-  renderList(queryRequired('#monitoring-list'), monitoringProposals);
-  renderList(queryRequired('#security-list'), securityProposals);
-  renderCards(queryRequired('#diagnosis-cards'), diagnosisCards.summary, {
-    variant: 'feature'
-  });
+
+  renderSynthesis();
+
+  // Efectos: se activan después de renderizar para que observen el contenido final.
+  setupReveal(document);
+  setupCounters(document);
+  setupSectionProgress(document);
+  setupScrollProgress(queryRequired('[data-scroll-progress-bar]'));
+  setupParallax(queryAll('[data-parallax-speed]'));
 
   setupScrollSpy(queryAll('main section[id]'));
   setupBackToTop(queryRequired('[data-to-top]'));

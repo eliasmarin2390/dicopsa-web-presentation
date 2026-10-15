@@ -14,25 +14,20 @@ export function renderNavbar(container, navigationItems) {
     link.dataset.active = normalizedLinks.includes(href) ? 'true' : 'false';
   });
 
-  const closeMenu = () => {
-    nav.dataset.open = 'false';
-    toggle.setAttribute('aria-expanded', 'false');
+  const setMenuState = (isOpen) => {
+    nav.dataset.open = String(isOpen);
+    toggle.setAttribute('aria-expanded', String(isOpen));
+    toggle.setAttribute(
+      'aria-label',
+      isOpen ? 'Cerrar menú de navegación' : 'Abrir menú de navegación'
+    );
   };
 
-  const openMenu = () => {
-    nav.dataset.open = 'true';
-    toggle.setAttribute('aria-expanded', 'true');
-  };
+  const closeMenu = () => setMenuState(false);
+  const openMenu = () => setMenuState(true);
 
   const syncWithViewport = () => {
-    if (window.innerWidth >= 960) {
-      nav.dataset.open = 'true';
-      toggle.setAttribute('aria-expanded', 'true');
-      return;
-    }
-
-    nav.dataset.open = 'false';
-    toggle.setAttribute('aria-expanded', 'false');
+    setMenuState(window.innerWidth >= 960);
   };
 
   toggle.addEventListener('click', () => {

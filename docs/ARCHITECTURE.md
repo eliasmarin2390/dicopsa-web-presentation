@@ -6,9 +6,10 @@ The project is organized as a modular front-end application for a static corpora
 
 - `index.html` defines the semantic shell, section anchors and placeholder containers for dynamic rendering.
 - `src/js/main.js` is the application entry point and orchestrates rendering.
-- `src/components` contains reusable render modules (cards, tables, timeline, navbar, footer).
+- `src/components` contains reusable render modules (cards, KPIs, timeline, tabs, analysis, navbar, footer).
 - `src/data` stores structured domain content used by the UI.
 - `src/js` contains interaction logic (scroll spy, back-to-top, reduced-motion handling).
+- `src/js/effects` contains scroll-linked motion: reveal on scroll, animated counters, scroll and section progress, parallax. Pure helpers live in `motion.js` and are unit-tested.
 - `src/utils` centralizes shared DOM and accessibility helpers.
 - `src/js/presentation` and `src/js/components` keep legacy Reveal.js modules used by unit tests and backward compatibility.
 - `src/css` contains global styles and support styles grouped by responsibility.

@@ -1,27 +1,75 @@
+/*
+ * Design tokens: única fuente de verdad para colores, tipografía,
+ * espaciado, radios, sombras y movimiento.
+ *
+ * Paleta: grafito azulado con acentos suaves. No se usa blanco puro
+ * para el texto ni para las superficies, para reducir la fatiga visual.
+ */
 :root {
-  --color-bg: #07111f;
-  --color-surface: #0f1d32;
-  --color-surface-alt: #122542;
-  --color-surface-soft: rgba(255, 255, 255, 0.04);
-  --color-text: #f5f7fb;
-  --color-muted: #c6d2e5;
-  --color-accent: #ff4dc4;
-  --color-accent-soft: rgba(255, 77, 196, 0.18);
-  --color-line: rgba(255, 255, 255, 0.12);
-  --color-success: #3ddc97;
-  --color-warning: #ffd166;
-  --shadow-lg: 0 26px 56px rgba(0, 0, 0, 0.28);
-  --radius-xl: 1.5rem;
-  --radius-lg: 1rem;
-  --radius-md: 0.75rem;
-  --space-1: 0.375rem;
-  --space-2: 0.75rem;
-  --space-3: 1rem;
-  --space-4: 1.5rem;
-  --space-5: 2rem;
-  --space-6: 3rem;
-  --font-body: 'Segoe UI Variable', 'Aptos', 'Segoe UI', sans-serif;
-  --font-heading:
-    'Aptos Display', 'Segoe UI Variable Display', 'Segoe UI', sans-serif;
-  --max-content-width: 1100px;
+  /* Superficies */
+  --color-bg: #13171e;
+  --color-bg-elev: #181d26;
+  --color-surface: #1f2631;
+  --color-surface-2: #252d3a;
+  --color-surface-hover: #2a3342;
+
+  /* Texto (contraste AA sobre --color-surface) */
+  --color-text: #e2e7ee;
+  --color-text-strong: #eef2f6;
+  --color-text-muted: #a4aebd;
+  --color-text-faint: #7d8898;
+
+  /* Bordes */
+  --color-line: rgba(164, 178, 200, 0.14);
+  --color-line-strong: rgba(164, 178, 200, 0.26);
+
+  /* Acentos */
+  --color-accent: #7fc3cf;
+  --color-accent-strong: #5aa9b8;
+  --color-accent-soft: rgba(127, 195, 207, 0.14);
+  --color-warm: #d8b982;
+  --color-warm-soft: rgba(216, 185, 130, 0.14);
+  --color-rose: #c99a92;
+  --color-rose-soft: rgba(201, 154, 146, 0.14);
+  --color-sage: #9cc9ad;
+  --color-sage-soft: rgba(156, 201, 173, 0.14);
+  --color-focus: #8fd0dc;
+
+  /* Tipografía */
+  --font-body:
+    'Segoe UI Variable', 'Segoe UI', system-ui, -apple-system, 'Helvetica Neue',
+    Arial, sans-serif;
+  --font-display:
+    'Segoe UI Variable Display', 'Segoe UI Variable', 'Segoe UI', system-ui,
+    -apple-system, 'Helvetica Neue', Arial, sans-serif;
+
+  /* Espaciado */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+  --space-8: clamp(5rem, 11vw, 8rem);
+
+  /* Forma y profundidad */
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-xl: 32px;
+  --radius-pill: 999px;
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.25);
+  --shadow-md: 0 12px 32px rgba(0, 0, 0, 0.28);
+  --shadow-lg: 0 28px 60px rgba(0, 0, 0, 0.36);
+
+  /* Movimiento */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease: 0.35s var(--ease-out);
+  --reveal-distance: 28px;
+
+  /* Layout */
+  --container-width: 1120px;
+  --container: min(var(--container-width), calc(100% - 3rem));
+  --header-height: 60px;
 }

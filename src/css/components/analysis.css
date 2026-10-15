@@ -1,0 +1,230 @@
+/* ---------- Pestañas (segmented control) ---------- */
+
+.tabs__list {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  padding: 5px;
+  margin-bottom: var(--space-6);
+  background: var(--color-surface);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-pill);
+}
+
+.tabs__tab {
+  padding: 0.6rem 1.15rem;
+  border: 0;
+  border-radius: var(--radius-pill);
+  background: transparent;
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+.tabs__tab:hover {
+  color: var(--color-text-strong);
+}
+
+.tabs__tab[aria-selected='true'] {
+  background: var(--color-surface-2);
+  color: var(--color-text-strong);
+  box-shadow: var(--shadow-sm);
+}
+
+.tabs__panel {
+  animation: panel-in 0.6s var(--ease-out);
+}
+
+.tabs__panel[hidden] {
+  display: none;
+}
+
+@keyframes panel-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* ---------- PESTEL ---------- */
+
+.pestel-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-4);
+}
+
+.pestel-col {
+  padding: var(--space-6);
+  background: var(--color-surface);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-lg);
+}
+
+.pestel-col h3 {
+  margin: 0 0 var(--space-4);
+  font-size: 1.2rem;
+}
+
+.pestel-col--opportunity h3 {
+  color: var(--color-sage);
+}
+
+.pestel-col--threat h3 {
+  color: var(--color-rose);
+}
+
+.pestel-col--opportunity .bullet-list li::before {
+  background: var(--color-sage);
+}
+
+.pestel-col--threat .bullet-list li::before {
+  background: var(--color-rose);
+}
+
+/* ---------- Especificaciones (MDF / IDF) ---------- */
+
+.spec-list {
+  display: grid;
+  margin: 0;
+  border-top: 1px solid var(--color-line);
+}
+
+.spec-list > dt,
+.spec-list > dd {
+  margin: 0;
+}
+
+.spec-list > dt {
+  padding: var(--space-5) 0 var(--space-3);
+  color: var(--color-text-strong);
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.spec-list > dd {
+  padding-bottom: var(--space-5);
+  border-bottom: 1px solid var(--color-line);
+}
+
+.spec-list .bullet-list {
+  gap: var(--space-2);
+}
+
+.spec-list dt:first-of-type {
+  padding-top: var(--space-4);
+}
+
+/* Dos columnas para fortalezas y debilidades cuando hay espacio */
+@media (min-width: 900px) {
+  .spec-list {
+    grid-template-columns: minmax(180px, 0.3fr) minmax(0, 1fr);
+    column-gap: var(--space-6);
+  }
+
+  .spec-list > dt {
+    padding-top: var(--space-5);
+  }
+
+  .spec-list > dt:first-of-type {
+    padding-top: var(--space-5);
+  }
+}
+
+/* ---------- Diagrama de topología ---------- */
+
+.topology {
+  margin: 0;
+  padding: var(--space-5);
+  background: var(--color-surface);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-xl);
+}
+
+.topology svg {
+  width: 100%;
+  height: auto;
+}
+
+.topology__link {
+  fill: none;
+  stroke: var(--color-line-strong);
+  stroke-width: 1.5;
+  stroke-dasharray: 4 6;
+}
+
+.topology__node rect {
+  fill: var(--color-surface-2);
+  stroke: var(--color-line-strong);
+  stroke-width: 1;
+}
+
+.topology__node text {
+  fill: var(--color-text-strong);
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.topology__node .topology__sub {
+  fill: var(--color-text-muted);
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.topology__node--core rect {
+  fill: var(--color-accent-soft);
+  stroke: var(--color-accent);
+}
+
+.topology__pulse {
+  fill: var(--color-warm);
+  filter: drop-shadow(0 0 6px rgba(216, 185, 130, 0.8));
+}
+
+.topology__pulse--delayed {
+  fill: var(--color-accent);
+  filter: drop-shadow(0 0 6px rgba(127, 195, 207, 0.8));
+}
+
+.topology figcaption {
+  margin-top: var(--space-4);
+  color: var(--color-text-faint);
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+@media (max-width: 640px) {
+  .pestel-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .pestel-col {
+    padding: var(--space-5);
+  }
+
+  .tabs__list {
+    display: flex;
+    border-radius: var(--radius-md);
+  }
+
+  .tabs__tab {
+    flex: 1 1 auto;
+    padding-inline: 0.6rem;
+    font-size: 0.88rem;
+  }
+
+  .topology {
+    padding: var(--space-3);
+  }
+}

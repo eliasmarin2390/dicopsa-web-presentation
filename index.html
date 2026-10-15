@@ -5,12 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="DICOPSA: diagnóstico estratégico, infraestructura tecnológica y plan de mejora."
+      content="DICOPSA: diagnóstico estratégico, entorno PESTEL, infraestructura tecnológica (MDF e IDF), riesgos y plan de mejora. Proyecto de curso, Avance I."
     />
+    <meta name="theme-color" content="#13171e" />
     <title>DICOPSA | Diagnóstico estratégico</title>
   </head>
   <body>
     <div class="site-shell">
+      <a class="skip-link" href="#contenido">Saltar al contenido</a>
+      <div
+        class="scroll-progress"
+        data-scroll-progress-bar
+        aria-hidden="true"
+      ></div>
+
       <header
         id="site-header"
         class="site-header"
@@ -40,168 +48,426 @@
             aria-label="Navegación principal"
           >
             <ul class="site-nav__list">
-              <li><a href="#inicio">Inicio</a></li>
-              <li><a href="#empresa">La empresa</a></li>
-              <li><a href="#estrategia">Análisis estratégico</a></li>
-              <li><a href="#infraestructura">Infraestructura</a></li>
+              <li><a href="#perfil">Perfil</a></li>
+              <li><a href="#entorno">Entorno</a></li>
+              <li><a href="#tecnologia">Tecnología</a></li>
+              <li><a href="#pestel">PESTEL</a></li>
+              <li><a href="#foda">FODA</a></li>
+              <li><a href="#interno">Infraestructura</a></li>
               <li><a href="#riesgos">Riesgos</a></li>
-              <li><a href="#mejora">Plan de mejora</a></li>
-              <li><a href="#diagnostico">Diagnóstico</a></li>
+              <li><a href="#mejora">Mejora</a></li>
+              <li><a href="#sintesis">Síntesis</a></li>
             </ul>
           </nav>
         </div>
       </header>
 
-      <main>
-        <section id="inicio" class="site-section hero">
+      <main id="contenido" tabindex="-1">
+        <!-- Portada -->
+        <section id="inicio" class="hero" aria-labelledby="hero-title">
+          <div class="hero__orbs" aria-hidden="true" data-parallax>
+            <span
+              class="hero__orb hero__orb--a"
+              data-parallax-speed="0.18"
+            ></span>
+            <span
+              class="hero__orb hero__orb--b"
+              data-parallax-speed="0.08"
+            ></span>
+            <span
+              class="hero__orb hero__orb--c"
+              data-parallax-speed="0.25"
+            ></span>
+          </div>
+
           <div class="container hero__inner">
-            <div class="hero__content">
-              <p class="eyebrow">Distribuidora Comercial del Pacífico</p>
-              <h1>
-                DICOPSA: un modelo de distribución con potencial de crecimiento
-                digital.
-              </h1>
+            <p class="eyebrow hero__eyebrow" data-reveal>
+              Universidad Americana · Planificación estratégica y organización
+              informática
+            </p>
+            <h1 id="hero-title" class="hero__title" data-reveal>DICOPSA</h1>
+            <p class="hero__subtitle" data-reveal>
+              Diagnóstico estratégico y tecnológico de Distribuidora Comercial
+              del Pacífico. Proyecto de curso · Avance I.
+            </p>
+            <p class="hero__meta" id="cover-meta" data-reveal></p>
+            <div class="hero__actions" data-reveal>
+              <a class="button button--primary" href="#perfil"
+                >Explorar el diagnóstico</a
+              >
+              <a class="button button--ghost" href="#sintesis">Ver síntesis</a>
+            </div>
+          </div>
+        </section>
+
+        <!-- Perfil de la compañía -->
+        <section
+          id="perfil"
+          class="site-section"
+          aria-labelledby="perfil-title"
+        >
+          <div class="container">
+            <div class="section-heading" data-reveal>
+              <p class="eyebrow">Perfil de la compañía</p>
+              <h2 id="perfil-title">
+                Una distribuidora sólida, con 22 años de historia.
+              </h2>
+              <p class="lead" id="company-profile-text"></p>
+            </div>
+
+            <div id="home-kpis" class="kpi-grid" data-reveal-group></div>
+
+            <h3 class="subhead" data-reveal>Trayectoria</h3>
+            <div
+              id="company-timeline"
+              class="timeline-grid"
+              data-scroll-progress
+            ></div>
+
+            <h3 class="subhead" data-reveal>Modelo de negocio</h3>
+            <div id="company-cards" class="card-grid" data-reveal-group></div>
+          </div>
+        </section>
+
+        <!-- Entorno de la empresa -->
+        <section
+          id="entorno"
+          class="site-section site-section--alt"
+          aria-labelledby="entorno-title"
+        >
+          <div class="container">
+            <div class="section-heading" data-reveal>
+              <p class="eyebrow">Entorno y posición</p>
+              <h2 id="entorno-title">De hoy a 2030, y cómo compite DICOPSA.</h2>
+            </div>
+
+            <div id="situation-cards" class="card-grid" data-reveal-group></div>
+
+            <div class="split" data-reveal>
+              <div class="panel-block">
+                <h3>
+                  Respuesta a las condiciones económicas, servicio y mercado
+                </h3>
+                <ul id="economic-response" class="bullet-list"></ul>
+                <p class="note" id="economic-note"></p>
+              </div>
+              <div class="panel-block">
+                <h3>Competencia</h3>
+                <div
+                  id="competition-cards"
+                  class="stack"
+                  data-reveal-group
+                ></div>
+              </div>
+            </div>
+
+            <h3 class="subhead" data-reveal>Proveedores clave</h3>
+            <div id="supplier-cards" class="card-grid" data-reveal-group></div>
+          </div>
+        </section>
+
+        <!-- Situación tecnológica -->
+        <section
+          id="tecnologia"
+          class="site-section"
+          aria-labelledby="tecnologia-title"
+        >
+          <div class="container">
+            <div class="section-heading" data-reveal>
+              <p class="eyebrow">Situación tecnológica</p>
+              <h2 id="tecnologia-title">
+                La tecnología aún es un centro de costos.
+              </h2>
+            </div>
+
+            <div class="maturity" data-reveal>
+              <div class="maturity__head">
+                <span class="maturity__stage" id="maturity-stage"></span>
+                <p class="maturity__text" id="maturity-text"></p>
+              </div>
+              <div class="maturity__scale" aria-hidden="true">
+                <span class="maturity__end" id="maturity-from"></span>
+                <div class="maturity__track">
+                  <span class="maturity__dot"></span>
+                </div>
+                <span
+                  class="maturity__end maturity__end--to"
+                  id="maturity-to"
+                ></span>
+              </div>
+              <p class="maturity__note" id="maturity-note"></p>
+            </div>
+
+            <div id="tech-summary" class="card-grid" data-reveal-group></div>
+          </div>
+        </section>
+
+        <!-- Análisis externo PESTEL -->
+        <section
+          id="pestel"
+          class="site-section site-section--alt"
+          aria-labelledby="pestel-title"
+        >
+          <div class="container">
+            <div class="section-heading" data-reveal>
+              <p class="eyebrow">Análisis externo</p>
+              <h2 id="pestel-title">
+                PESTEL: oportunidades y amenazas del entorno.
+              </h2>
               <p class="lead">
-                Diagnóstico estratégico y tecnológico orientado a fortalecer la
-                continuidad, la eficiencia operativa y la resiliencia del
-                negocio en Nicaragua.
+                Selecciona una dimensión para ver sus oportunidades y amenazas.
               </p>
-              <div class="hero__actions">
-                <a class="button button--primary" href="#empresa"
-                  >Conocer la empresa</a
-                >
-                <a class="button button--secondary" href="#diagnostico"
-                  >Ver diagnóstico</a
-                >
-              </div>
             </div>
-            <aside class="hero__panel" aria-label="Indicadores clave">
-              <p class="hero__panel-label">Indicadores clave</p>
-              <div id="home-kpis" class="kpi-grid"></div>
-            </aside>
+            <div id="pestel-tabs" class="tabs" data-reveal></div>
           </div>
         </section>
 
-        <section id="empresa" class="site-section">
+        <!-- FODA -->
+        <section id="foda" class="site-section" aria-labelledby="foda-title">
           <div class="container">
-            <div class="section-heading">
-              <p class="eyebrow">La empresa</p>
-              <h2>Perfil general de DICOPSA</h2>
+            <div class="section-heading" data-reveal>
+              <p class="eyebrow">FODA</p>
+              <h2 id="foda-title">
+                Fortalezas, oportunidades, debilidades y amenazas.
+              </h2>
             </div>
-            <div id="company-timeline" class="timeline-grid"></div>
-            <div id="company-cards" class="card-grid"></div>
-          </div>
-        </section>
-
-        <section id="estrategia" class="site-section site-section--alt">
-          <div class="container">
-            <div class="section-heading">
-              <p class="eyebrow">Análisis estratégico</p>
-              <h2>Diagnóstico del entorno y la posición competitiva</h2>
-            </div>
-
-            <div class="table-shell">
-              <h3>PESTEL</h3>
-              <div id="pestel-table"></div>
-            </div>
-
-            <div class="swot-grid">
-              <div class="swot-panel">
+            <div class="swot-grid" data-reveal-group>
+              <article class="swot-panel">
                 <h3>Fortalezas</h3>
-                <div id="strengths-list" class="list-grid"></div>
-              </div>
-              <div class="swot-panel">
+                <ul id="swot-strengths" class="bullet-list"></ul>
+              </article>
+              <article class="swot-panel">
                 <h3>Oportunidades</h3>
-                <div id="opportunities-list" class="list-grid"></div>
-              </div>
-              <div class="swot-panel">
+                <ul id="swot-opportunities" class="bullet-list"></ul>
+              </article>
+              <article class="swot-panel">
                 <h3>Debilidades</h3>
-                <div id="weaknesses-list" class="list-grid"></div>
-              </div>
-              <div class="swot-panel">
+                <ul id="swot-weaknesses" class="bullet-list"></ul>
+              </article>
+              <article class="swot-panel">
                 <h3>Amenazas</h3>
-                <div id="threats-list" class="list-grid"></div>
-              </div>
+                <ul id="swot-threats" class="bullet-list"></ul>
+              </article>
             </div>
           </div>
         </section>
 
-        <section id="infraestructura" class="site-section">
+        <!-- Análisis interno: MDF e IDF -->
+        <section
+          id="interno"
+          class="site-section site-section--alt"
+          aria-labelledby="interno-title"
+        >
           <div class="container">
-            <div class="section-heading">
-              <p class="eyebrow">Infraestructura</p>
-              <h2>Infraestructura tecnológica y operación actual</h2>
+            <div class="section-heading" data-reveal>
+              <p class="eyebrow">Análisis interno · Departamento de TI</p>
+              <h2 id="interno-title">
+                Datacenter y cuartos de comunicaciones.
+              </h2>
+              <p class="lead">
+                Inventario, fortalezas, debilidades, posibles fallos, áreas de
+                mejora y certificaciones.
+              </p>
             </div>
 
-            <div id="tech-summary" class="card-grid"></div>
-            <div class="table-shell">
-              <h3>Inventario del MDF</h3>
-              <div id="mdf-table"></div>
-            </div>
-            <div id="idf-cards" class="card-grid"></div>
+            <figure
+              class="topology"
+              data-reveal
+              aria-labelledby="topology-caption"
+            >
+              <svg
+                viewBox="0 0 800 340"
+                role="img"
+                aria-labelledby="topology-title topology-desc"
+              >
+                <title id="topology-title">Topología de red de DICOPSA</title>
+                <desc id="topology-desc">
+                  El MDF en oficinas centrales se conecta por fibra al IDF-2 de
+                  la bodega, al IDF-1 del segundo piso y por VPN a las
+                  sucursales de León, Masaya y Chinandega.
+                </desc>
+                <path class="topology__link" d="M400 150 L150 70" />
+                <path class="topology__link" d="M400 150 L650 70" />
+                <path class="topology__link" d="M400 150 L170 270" />
+                <path class="topology__link" d="M400 150 L400 270" />
+                <path class="topology__link" d="M400 150 L630 270" />
+                <circle class="topology__pulse" r="5" cx="0" cy="0">
+                  <animateMotion
+                    dur="5s"
+                    repeatCount="indefinite"
+                    path="M400 150 L650 70"
+                  />
+                </circle>
+                <circle
+                  class="topology__pulse topology__pulse--delayed"
+                  r="5"
+                  cx="0"
+                  cy="0"
+                >
+                  <animateMotion
+                    dur="6s"
+                    repeatCount="indefinite"
+                    path="M400 150 L170 270"
+                  />
+                </circle>
+                <g class="topology__node topology__node--core">
+                  <rect x="310" y="112" width="180" height="76" rx="18" />
+                  <text x="400" y="146" text-anchor="middle">MDF</text>
+                  <text
+                    x="400"
+                    y="170"
+                    text-anchor="middle"
+                    class="topology__sub"
+                  >
+                    Oficinas centrales
+                  </text>
+                </g>
+                <g class="topology__node">
+                  <rect x="70" y="40" width="160" height="60" rx="14" />
+                  <text x="150" y="66" text-anchor="middle">IDF-1</text>
+                  <text
+                    x="150"
+                    y="86"
+                    text-anchor="middle"
+                    class="topology__sub"
+                  >
+                    2.º piso
+                  </text>
+                </g>
+                <g class="topology__node">
+                  <rect x="570" y="40" width="160" height="60" rx="14" />
+                  <text x="650" y="66" text-anchor="middle">IDF-2</text>
+                  <text
+                    x="650"
+                    y="86"
+                    text-anchor="middle"
+                    class="topology__sub"
+                  >
+                    Bodega · despacho
+                  </text>
+                </g>
+                <g class="topology__node">
+                  <rect x="90" y="240" width="160" height="60" rx="14" />
+                  <text x="170" y="266" text-anchor="middle">León</text>
+                  <text
+                    x="170"
+                    y="286"
+                    text-anchor="middle"
+                    class="topology__sub"
+                  >
+                    IDF-3 · VPN
+                  </text>
+                </g>
+                <g class="topology__node">
+                  <rect x="320" y="240" width="160" height="60" rx="14" />
+                  <text x="400" y="266" text-anchor="middle">Masaya</text>
+                  <text
+                    x="400"
+                    y="286"
+                    text-anchor="middle"
+                    class="topology__sub"
+                  >
+                    IDF-4 · VPN
+                  </text>
+                </g>
+                <g class="topology__node">
+                  <rect x="550" y="240" width="160" height="60" rx="14" />
+                  <text x="630" y="266" text-anchor="middle">Chinandega</text>
+                  <text
+                    x="630"
+                    y="286"
+                    text-anchor="middle"
+                    class="topology__sub"
+                  >
+                    IDF-5 · VPN
+                  </text>
+                </g>
+              </svg>
+              <figcaption id="topology-caption">
+                Fibra al MDF desde la bodega; VPN sitio a sitio con las
+                sucursales.
+              </figcaption>
+            </figure>
 
-            <div class="two-col-layout">
-              <div class="panel-block">
-                <h3>Fortalezas operativas</h3>
-                <ul id="infra-strengths" class="bullet-list"></ul>
-              </div>
-              <div class="panel-block">
-                <h3>Debilidades críticas</h3>
-                <ul id="infra-weaknesses" class="bullet-list"></ul>
-              </div>
-            </div>
+            <div id="internal-tabs" class="tabs" data-reveal></div>
           </div>
         </section>
 
-        <section id="riesgos" class="site-section site-section--alt">
+        <!-- Riesgos -->
+        <section
+          id="riesgos"
+          class="site-section"
+          aria-labelledby="riesgos-title"
+        >
           <div class="container">
-            <div class="section-heading">
+            <div class="section-heading" data-reveal>
               <p class="eyebrow">Riesgos</p>
-              <h2>Impactos y amenazas clave</h2>
+              <h2 id="riesgos-title">
+                Lo que podría detener la facturación y el despacho.
+              </h2>
             </div>
-            <div id="risk-cards" class="card-grid"></div>
+            <div id="risk-cards" class="card-grid" data-reveal-group></div>
 
-            <div class="two-col-layout">
+            <div class="split" data-reveal>
               <div class="panel-block">
                 <h3>Riesgos operativos en sucursales</h3>
                 <ul id="branch-risks" class="bullet-list"></ul>
               </div>
-              <div class="panel-block">
-                <h3>Impacto en continuidad del negocio</h3>
-                <ul id="continuity-impact" class="bullet-list"></ul>
-              </div>
+              <div class="panel-block" id="external-risk"></div>
             </div>
           </div>
         </section>
 
-        <section id="mejora" class="site-section">
+        <!-- Plan de mejora -->
+        <section
+          id="mejora"
+          class="site-section site-section--alt"
+          aria-labelledby="mejora-title"
+        >
           <div class="container">
-            <div class="section-heading">
+            <div class="section-heading" data-reveal>
               <p class="eyebrow">Plan de mejora</p>
-              <h2>Ruta de transformación tecnológica y operativa</h2>
+              <h2 id="mejora-title">
+                Ruta de transformación tecnológica y operativa.
+              </h2>
             </div>
-            <div id="roadmap" class="roadmap-grid"></div>
+            <div
+              id="roadmap"
+              class="roadmap"
+              data-scroll-progress
+              data-reveal-group
+            ></div>
           </div>
         </section>
 
-        <section id="diagnostico" class="site-section site-section--alt">
+        <!-- Síntesis del diagnóstico -->
+        <section
+          id="sintesis"
+          class="site-section"
+          aria-labelledby="sintesis-title"
+        >
           <div class="container">
-            <div class="section-heading">
-              <p class="eyebrow">Diagnóstico</p>
-              <h2>Conclusiones y prioridades</h2>
+            <div class="section-heading" data-reveal>
+              <p class="eyebrow" id="loop-name"></p>
+              <h2 id="sintesis-title">Síntesis del diagnóstico.</h2>
+              <p class="lead" id="loop-step"></p>
             </div>
-            <div id="diagnosis-cards" class="card-grid"></div>
 
-            <div class="two-col-layout">
+            <div class="split" data-reveal>
               <div class="panel-block">
-                <h3>Propuestas de monitoreo</h3>
-                <ul id="monitoring-list" class="bullet-list"></ul>
+                <h3>Puntos críticos</h3>
+                <p id="critical-points" class="body-text"></p>
               </div>
               <div class="panel-block">
-                <h3>Propuestas de seguridad</h3>
-                <ul id="security-list" class="bullet-list"></ul>
+                <h3>Siguiente avance</h3>
+                <p id="next-step-text" class="body-text"></p>
               </div>
             </div>
+
+            <h3 class="subhead" data-reveal>
+              Filtro de las cinco preguntas gerenciales
+            </h3>
+            <ol id="mgmt-questions" class="questions" data-reveal-group></ol>
           </div>
         </section>
       </main>
@@ -221,7 +487,8 @@
           </nav>
 
           <p class="site-footer__meta">
-            © <span data-current-year></span> DICOPSA
+            © <span data-current-year></span> DICOPSA · Integrantes: Elias
+            Adrian Marín Cruz y Diedereich Alexander Alemán Martínez
           </p>
         </div>
       </footer>
