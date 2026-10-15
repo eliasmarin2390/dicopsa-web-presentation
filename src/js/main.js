@@ -1,4 +1,3 @@
-import '../css/main.css';
 import { renderCards } from '../components/cards.js';
 import { renderFooter } from '../components/footer.js';
 import { renderKpis } from '../components/kpis.js';
