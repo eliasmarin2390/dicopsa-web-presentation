@@ -23,15 +23,11 @@
       "label": "DICOPSA: Iniciar en Google Chrome",
       "type": "shell",
       "command": "node",
-      "args": [
-        "scripts/start-dev-chrome.mjs"
-      ],
+      "args": ["scripts/start-dev-chrome.mjs"],
       "options": {
         "cwd": "${workspaceFolder}"
       },
-      "dependsOn": [
-        "DICOPSA: Preparar entorno"
-      ],
+      "dependsOn": ["DICOPSA: Preparar entorno"],
       "dependsOrder": "sequence",
       "problemMatcher": [],
       "presentation": {
