@@ -1,0 +1,48 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "DICOPSA: Preparar entorno",
+      "type": "shell",
+      "command": "cmd",
+      "args": [
+        "/c",
+        "if not exist \"node_modules\" (npm install) else (echo Dependencias ya instaladas.)"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "clear": true
+      }
+    },
+    {
+      "label": "DICOPSA: Iniciar en Google Chrome",
+      "type": "shell",
+      "command": "node",
+      "args": [
+        "scripts/start-dev-chrome.mjs"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "dependsOn": [
+        "DICOPSA: Preparar entorno"
+      ],
+      "dependsOrder": "sequence",
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "clear": true
+      },
+      "runOptions": {
+        "instanceLimit": 1,
+        "runOn": "folderOpen"
+      }
+    }
+  ]
+}

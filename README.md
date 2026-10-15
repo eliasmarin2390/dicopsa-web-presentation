@@ -19,18 +19,102 @@ Presentar, de forma clara y profesional, el análisis del perfil de la empresa, 
 
 ## Requisitos previos
 
-- Node.js LTS.
-- npm.
+- Node.js LTS (recomendado 20 o superior)
+- npm
+- Visual Studio Code
 
-## Instalación
+## Preparación inicial del entorno
+
+1. Instala Node.js LTS si aún no está disponible en tu equipo.
+2. Abre la carpeta del proyecto en Visual Studio Code.
+3. Cuando VS Code muestre una solicitud de seguridad para ejecutar la tarea, apruébala para permitir la ejecución automática.
+4. La primera vez, la tarea comprobará si faltan dependencias y ejecutará `npm install` de forma segura.
+5. A continuación, iniciará Vite y abrirá la aplicación en la URL local configurada por el proyecto.
+
+## Abrir el proyecto en VS Code
+
+La forma recomendada es abrir la carpeta raíz del repositorio directamente en VS Code, no la carpeta `src` ni ningún subdirectorio. Esto permite que la configuración de tareas y extensiones de `.vscode` se detecte automáticamente.
+
+## Iniciar DICOPSA desde VS Code
+
+Hay dos opciones:
+
+### Opción recomendada: tarea de VS Code
+
+- En VS Code abre el panel de Terminal.
+- En la parte superior del panel, selecciona la tarea `DICOPSA: Iniciar en Google Chrome`.
+- Si la carpeta acaba de abrirse, VS Code puede sugerir ejecutar la tarea automáticamente. Aprueba la ejecución para iniciar el proyecto sin escribir comandos.
+
+La tarea incluida en `.vscode/tasks.json` hace lo siguiente:
+
+- Comprueba si existe `node_modules`.
+- Ejecuta `npm install` solo si hace falta.
+- Lanza Vite una sola vez en `127.0.0.1:5173`.
+- Espera a que el servidor responda y abre Google Chrome en `http://localhost:5173/dicopsa-corporate-website/`.
+- No usa la vista previa integrada de VS Code.
+
+La apertura se implementa en `scripts/start-dev-chrome.mjs`. El script busca Chrome en las variables `GOOGLE_CHROME_BIN` o `CHROME_PATH`, en el `PATH` y en las rutas estándar de instalación de Windows. No contiene rutas personales ni credenciales.
+
+Para evitar servidores duplicados, la tarea tiene `instanceLimit: 1` y Vite usa `--strictPort`. Si ya existe un servidor en el puerto 5173, la segunda ejecución termina con un error claro en lugar de iniciar otra instancia.
+
+### Configuración de VS Code incluida
+
+- `.vscode/tasks.json`: define la tarea principal para iniciar la aplicación.
+- `.vscode/extensions.json`: recomienda extensiones útiles para JavaScript, ESLint y Prettier.
+- `scripts/start-dev-chrome.mjs`: inicia Vite y abre Chrome cuando el servidor está listo.
+
+### Opción manual alternativa
 
 ```bash
 npm install
+npm run dev
 ```
+
+## Cómo detener la aplicación
+
+- En la terminal donde está corriendo Vite, pulsa `Ctrl + C`.
+- Si la terminal está en segundo plano, selecciona la pestaña del servidor y usa la misma combinación.
+
+Cerrar la pestaña de Chrome no detiene Vite; hay que detener la tarea con `Ctrl + C`.
+
+## Qué hacer si el puerto está ocupado
+
+Si el puerto `5173` ya está en uso, Vite puede fallar o reutilizar otro puerto según la configuración. En ese caso:
+
+```bash
+npm run dev -- --host 127.0.0.1 --port 4173
+```
+
+Alternativamente, cierra el proceso que esté usando el puerto 5173 o ajusta la configuración de la tarea si tu entorno lo requiere. La tarea automática conserva el puerto 5173 para mantener la URL esperada.
+
+## Errores habituales
+
+### Chrome no encontrado
+
+Vite seguirá ejecutándose y mostrará la URL en la terminal. Instala Google Chrome o define una ruta válida antes de iniciar la tarea:
+
+```powershell
+$env:GOOGLE_CHROME_BIN = 'C:\Ruta\A\chrome.exe'
+```
+
+Después, vuelve a ejecutar `DICOPSA: Iniciar en Google Chrome`.
+
+### La tarea no se inicia automáticamente
+
+VS Code puede pedir autorización para ejecutar tareas al abrir una carpeta. Selecciona **Allow Automatic Tasks** o ejecuta la tarea desde **Terminal > Run Task**. No es necesario desactivar las protecciones de seguridad.
+
+### Aparecen dos servidores
+
+Detén las tareas activas con `Ctrl + C`, cierra terminales duplicadas y ejecuta únicamente `DICOPSA: Iniciar en Google Chrome`. No ejecutes simultáneamente esa tarea y `npm run dev`.
+
+## Ruta base de Vite
+
+La ruta base del proyecto está configurada en `vite.config.js` como `/dicopsa-corporate-website/`. Esta configuración es intencional para mantener la aplicación consistente con la ruta esperada en entornos de despliegue y en la URL local de desarrollo.
 
 ## Comandos principales
 
 ```bash
+npm install
 npm run dev
 npm run build
 npm run preview
