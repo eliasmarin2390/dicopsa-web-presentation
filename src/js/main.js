@@ -23,7 +23,6 @@ import {
   diagnosisRisks,
   diagnosisSynthesis,
   externalOpportunitiesNote,
-  itSurveyGuide,
   managementQuestions,
   nextStep
 } from '../data/diagnosis.js';
@@ -192,8 +191,6 @@ function bootstrap() {
   });
 
   renderSynthesis();
-
-  renderQuestions(queryRequired('#survey-guide'), itSurveyGuide);
 
   // Efectos: se activan después de renderizar para que observen el contenido final.
   setupReveal(document);

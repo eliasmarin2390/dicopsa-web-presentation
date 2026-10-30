@@ -9,8 +9,7 @@ export const siteNavigation = [
   { href: '#interno', label: 'Infraestructura' },
   { href: '#riesgos', label: 'Riesgos' },
   { href: '#mejora', label: 'Mejora' },
-  { href: '#sintesis', label: 'Síntesis' },
-  { href: '#anexo', label: 'Anexo' }
+  { href: '#sintesis', label: 'Síntesis' }
 ];
 
 export const siteFooter = {

@@ -3,7 +3,7 @@ export const improvementRoadmap = [
   {
     phase: '1',
     title: 'Validar con el área de TI',
-    text: 'Confirmar ubicación, inventario, redundancia y certificaciones mediante visita o entrevista con la guía del anexo.'
+    text: 'Confirmar ubicación, inventario, redundancia y certificaciones mediante visita o entrevista.'
   },
   {
     phase: '2',

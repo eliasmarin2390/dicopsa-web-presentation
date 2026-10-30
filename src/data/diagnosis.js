@@ -11,7 +11,7 @@ export const externalOpportunitiesNote =
 
 export const nextStep = {
   title: 'Siguiente paso',
-  text: 'Validar el análisis interno con el área de TI mediante la guía del anexo y priorizar las iniciativas con el filtro de las cinco preguntas gerenciales.'
+  text: 'Validar el análisis interno con el área de TI y priorizar las iniciativas con el filtro de las cinco preguntas gerenciales.'
 };
 
 export const managementQuestions = [
@@ -34,45 +34,5 @@ export const diagnosisRisks = [
   {
     title: 'Riesgo físico',
     text: 'Sismo o incendio en Managua sin sitio alterno.'
-  }
-];
-
-// Anexo: guía de levantamiento para validar el análisis interno con el área de TI.
-export const itSurveyGuide = [
-  {
-    title: 'Ubicación',
-    text: '¿Dónde está el datacenter (MDF)? ¿Cuántos IDF hay y en qué edificios o sucursales?'
-  },
-  {
-    title: 'Inventario',
-    text: '¿Cuántos racks, servidores, equipos de almacenamiento, firewalls, switches y enlaces de Internet existen? ¿Qué sistemas corren (ERP/DMS, CRM, facturación)?'
-  },
-  {
-    title: 'Redundancia',
-    text: '¿Hay servidores en alta disponibilidad, enlaces de respaldo y un sitio alterno o nube?'
-  },
-  {
-    title: 'Climatización',
-    text: '¿Qué tipo de aire acondicionado hay, cuántas unidades y se monitorea la temperatura?'
-  },
-  {
-    title: 'Electricidad / UPS',
-    text: '¿Qué capacidad y autonomía tienen las UPS? ¿Hay planta eléctrica con transferencia automática?'
-  },
-  {
-    title: 'Cableado',
-    text: '¿Qué categoría de cableado se usa? ¿Está etiquetado, documentado y certificado?'
-  },
-  {
-    title: 'Seguridad',
-    text: '¿Cómo se controla el acceso físico? ¿Hay detección de incendios, CCTV, segmentación por VLANs y política de respaldos?'
-  },
-  {
-    title: 'Certificaciones',
-    text: '¿Cuentan con alguna certificación (TIA-942, ISO/IEC 27001, otras)?'
-  },
-  {
-    title: 'Problemas',
-    text: '¿Cuáles han sido las principales fallas o incidentes en los últimos dos años?'
   }
 ];

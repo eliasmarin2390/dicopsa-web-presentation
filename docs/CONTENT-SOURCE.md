@@ -20,4 +20,4 @@ This presentation is based on the OCR text and page images extracted from the PD
 ## Ambiguities
 
 - The document references institutional and technical frameworks, but it does not prove formal certification or adoption of those standards. They are therefore shown as proposals or targets where appropriate.
-- Casa Pellas does not publish its internal IT information. The technological situation and the MDF/IDF analysis are a reference scenario from the source document, marked as "por confirmar" or "a validar", and must be confirmed with the IT area using the interview guide in the annex.
+- Casa Pellas does not publish its internal IT information. The technological situation and the MDF/IDF analysis are a reference scenario from the source document, marked as "por confirmar" or "a validar", and must be confirmed with the IT area through a site visit or interview.
