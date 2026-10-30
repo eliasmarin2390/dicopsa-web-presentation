@@ -58,8 +58,8 @@
   position: fixed;
   inset: 0 0 auto 0;
   z-index: 60;
-  height: 2px;
-  background: linear-gradient(90deg, var(--color-accent), var(--color-warm));
+  height: 3px;
+  background: var(--brand-red);
   transform-origin: 0 50%;
   transform: scaleX(0);
 }
@@ -68,10 +68,11 @@
   position: sticky;
   top: 0;
   z-index: 50;
-  background: rgba(19, 23, 30, 0.72);
-  backdrop-filter: saturate(180%) blur(20px);
-  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: saturate(180%) blur(12px);
+  -webkit-backdrop-filter: saturate(180%) blur(12px);
   border-bottom: 1px solid var(--color-line);
+  box-shadow: var(--shadow-sm);
 }
 
 .site-header__inner {
@@ -82,52 +83,55 @@
   min-height: var(--header-height);
 }
 
+/* Logotipo tipográfico: "Casa Pellas" en cursiva negrita con el lema subrayado en rojo */
 .brand {
   display: inline-flex;
-  align-items: center;
-  gap: var(--space-3);
-  color: var(--color-text-strong);
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 2px;
+  color: var(--brand-navy);
   text-decoration: none;
+  line-height: 1;
 }
 
-.brand__mark {
-  display: inline-grid;
-  place-items: center;
-  width: 2rem;
-  height: 2rem;
-  border-radius: 9px;
-  background: linear-gradient(
-    135deg,
-    var(--color-accent-strong),
-    var(--color-warm)
-  );
-  color: var(--color-bg);
+.brand__word {
   font-family: var(--font-display);
-  font-size: 0.95rem;
-  font-weight: 700;
+  font-size: 1.45rem;
+  font-style: italic;
+  font-weight: 800;
+  letter-spacing: -0.03em;
 }
 
-.brand__text {
-  font-size: 0.9rem;
-  font-weight: 600;
-  letter-spacing: 0.14em;
+.brand__tag {
+  padding-bottom: 3px;
+  border-bottom: 2px solid var(--brand-red);
+  font-size: 0.56rem;
+  font-style: italic;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
 .site-nav__list {
   display: flex;
-  align-items: center;
-  gap: 2px;
+  align-items: stretch;
+  gap: 0;
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
 .site-nav a {
-  display: inline-block;
-  padding: var(--space-2) var(--space-3);
-  border-radius: var(--radius-pill);
-  color: var(--color-text-muted);
-  font-size: 0.85rem;
+  display: inline-flex;
+  align-items: center;
+  height: 100%;
+  padding: var(--space-2) 0.7rem;
+  border-radius: var(--radius-sm);
+  color: #5b6472;
+  font-size: 0.76rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
   text-decoration: none;
   transition:
     color 0.25s ease,
@@ -135,24 +139,26 @@
 }
 
 .site-nav a:hover {
-  color: var(--color-text-strong);
-  background: var(--color-surface);
+  color: var(--brand-blue);
+  background: var(--color-accent-soft);
 }
 
 .site-nav a[data-active='true'] {
-  color: var(--color-text-strong);
-  background: var(--color-surface-2);
+  color: var(--color-on-brand);
+  background: var(--brand-blue);
 }
 
 .site-nav__toggle {
   display: none;
   padding: var(--space-2) var(--space-4);
-  border: 1px solid var(--color-line-strong);
-  border-radius: var(--radius-pill);
+  border: 1px solid var(--brand-blue);
+  border-radius: var(--radius-sm);
   background: var(--color-surface);
-  color: var(--color-text-strong);
-  font-size: 0.9rem;
-  font-weight: 600;
+  color: var(--brand-blue);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
 }
 
 /* ---------- Portada (hero) ---------- */
@@ -166,11 +172,30 @@
   padding-block: var(--space-8);
   background:
     radial-gradient(
-      ellipse at 50% 0%,
-      rgba(127, 195, 207, 0.08),
-      transparent 60%
+      ellipse at 85% 20%,
+      rgba(255, 255, 255, 0.14),
+      transparent 55%
     ),
-    var(--color-bg);
+    linear-gradient(135deg, var(--brand-navy) 0%, var(--brand-blue) 100%);
+  color: var(--color-on-brand);
+}
+
+/* Franjas rojas diagonales, inspiradas en las líneas de velocidad de la marca */
+.hero::after {
+  content: '';
+  position: absolute;
+  right: -5%;
+  bottom: 12%;
+  width: min(48vw, 560px);
+  height: 64px;
+  background: repeating-linear-gradient(
+    180deg,
+    var(--brand-red) 0 6px,
+    transparent 6px 14px
+  );
+  transform: skewX(-24deg);
+  opacity: 0.9;
+  pointer-events: none;
 }
 
 .hero__orbs {
@@ -184,7 +209,7 @@
   position: absolute;
   border-radius: 50%;
   filter: blur(70px);
-  opacity: 0.55;
+  opacity: 0.6;
   transform: translate3d(0, var(--parallax-y, 0px), 0);
   will-change: transform;
 }
@@ -196,7 +221,7 @@
   right: -6%;
   background: radial-gradient(
     circle,
-    rgba(127, 195, 207, 0.45),
+    rgba(120, 170, 255, 0.45),
     transparent 70%
   );
 }
@@ -206,11 +231,7 @@
   aspect-ratio: 1;
   bottom: -18%;
   left: -8%;
-  background: radial-gradient(
-    circle,
-    rgba(216, 185, 130, 0.28),
-    transparent 70%
-  );
+  background: radial-gradient(circle, rgba(232, 55, 67, 0.35), transparent 70%);
 }
 
 .hero__orb--c {
@@ -220,7 +241,7 @@
   left: 45%;
   background: radial-gradient(
     circle,
-    rgba(156, 201, 173, 0.18),
+    rgba(255, 255, 255, 0.12),
     transparent 70%
   );
 }
@@ -232,34 +253,29 @@
 }
 
 .hero__eyebrow {
-  color: var(--color-text-muted);
-  letter-spacing: 0.02em;
-  text-transform: none;
-  font-size: 1rem;
-  font-weight: 500;
+  color: rgba(255, 255, 255, 0.85);
+  letter-spacing: 0.08em;
+  font-size: 0.85rem;
 }
 
 .hero__title {
   margin: 0;
-  background: linear-gradient(180deg, var(--color-text-strong) 40%, #9fb0c4);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+  color: var(--color-on-brand);
 }
 
 .hero__subtitle {
   margin-top: var(--space-5);
   max-width: 40ch;
-  color: var(--color-text);
+  color: rgba(255, 255, 255, 0.92);
   font-family: var(--font-display);
-  font-size: clamp(1.4rem, 2.6vw, 1.9rem);
+  font-size: clamp(1.3rem, 2.4vw, 1.75rem);
+  font-weight: 600;
   line-height: 1.3;
-  letter-spacing: -0.01em;
 }
 
 .hero__meta {
   margin-top: var(--space-5);
-  color: var(--color-text-faint);
+  color: rgba(255, 255, 255, 0.72);
   font-size: 0.95rem;
 }
 
@@ -270,14 +286,36 @@
   margin-top: var(--space-6);
 }
 
+.hero .button--primary {
+  background: var(--color-on-brand);
+  color: var(--brand-blue);
+}
+
+.hero .button--primary:hover {
+  background: #e8eefa;
+}
+
+.hero .button--ghost {
+  border-color: var(--color-on-brand);
+  color: var(--color-on-brand);
+}
+
+.hero .button--ghost:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
 /* ---------- Pie de página ---------- */
 
 .site-footer {
   margin-top: auto;
   padding-block: var(--space-7) var(--space-6);
-  background: var(--color-bg);
-  border-top: 1px solid var(--color-line);
-  color: var(--color-text-muted);
+  background: var(--brand-ink);
+  border-top: 4px solid var(--brand-red);
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.site-footer .brand {
+  color: var(--color-on-brand);
 }
 
 .site-footer__inner {
@@ -291,7 +329,7 @@
   max-width: 56ch;
   margin-top: var(--space-4);
   font-size: 0.9rem;
-  color: var(--color-text-faint);
+  color: rgba(255, 255, 255, 0.72);
 }
 
 .site-footer__list {
@@ -305,24 +343,27 @@
 }
 
 .site-footer__list a {
-  color: var(--color-text-muted);
-  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
   text-decoration: none;
 }
 
 .site-footer__list a:hover,
 .site-footer__list a:focus-visible,
 .site-footer__list a[data-active='true'] {
-  color: var(--color-text-strong);
+  color: var(--color-on-brand);
 }
 
 .site-footer__meta {
   grid-column: 1 / -1;
   margin: 0;
   padding-top: var(--space-5);
-  border-top: 1px solid var(--color-line);
+  border-top: 1px solid rgba(255, 255, 255, 0.16);
   font-size: 0.85rem;
-  color: var(--color-text-faint);
+  color: rgba(255, 255, 255, 0.65);
 }
 
 /* ---------- Botón volver arriba ---------- */
@@ -336,10 +377,10 @@
   place-items: center;
   width: 46px;
   height: 46px;
-  border: 1px solid var(--color-line-strong);
+  border: 0;
   border-radius: 50%;
-  background: var(--color-surface-2);
-  color: var(--color-text-strong);
+  background: var(--brand-blue);
+  color: var(--color-on-brand);
   font-size: 1.15rem;
   box-shadow: var(--shadow-md);
   opacity: 0;
@@ -352,7 +393,7 @@
 }
 
 .to-top:hover {
-  background: var(--color-surface-hover);
+  background: var(--brand-navy);
 }
 
 .to-top.is-visible {

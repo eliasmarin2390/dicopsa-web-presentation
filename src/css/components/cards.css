@@ -13,23 +13,27 @@
   gap: var(--space-4);
   min-height: 190px;
   padding: var(--space-6);
-  background: var(--color-surface);
-  border: 1px solid var(--color-line);
+  background: linear-gradient(140deg, var(--brand-navy), var(--brand-blue));
+  border: 0;
+  border-bottom: 4px solid var(--brand-red);
+  box-shadow: var(--shadow-md);
   border-radius: var(--radius-lg);
 }
 
 .kpi__value {
   font-family: var(--font-display);
-  font-size: clamp(2.75rem, 5.5vw, 4.25rem);
-  font-weight: 650;
+  font-size: clamp(2.25rem, 4vw, 3.25rem);
+  white-space: nowrap;
+  font-weight: 800;
+  font-style: italic;
   line-height: 1;
   letter-spacing: -0.04em;
-  color: var(--color-text-strong);
+  color: var(--color-on-brand);
   font-variant-numeric: tabular-nums;
 }
 
 .kpi__label {
-  color: var(--color-text-muted);
+  color: rgba(255, 255, 255, 0.85);
   font-size: 0.95rem;
   line-height: 1.4;
 }
@@ -58,6 +62,7 @@
   background: var(--color-surface);
   border: 1px solid var(--color-line);
   border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
   overflow: hidden;
 }
 
@@ -124,13 +129,14 @@
     transition:
       transform 0.5s var(--ease-out),
       background-color 0.4s ease,
-      border-color 0.4s ease;
+      border-color 0.4s ease,
+      box-shadow 0.4s ease;
   }
 
   .card:hover {
     transform: translateY(-4px);
-    background: var(--color-surface-hover);
-    border-color: var(--color-line-strong);
+    border-color: var(--brand-blue);
+    box-shadow: var(--shadow-md);
   }
 }
 
@@ -190,7 +196,7 @@
 .timeline::after {
   right: auto;
   width: calc(var(--progress) * 100%);
-  background: linear-gradient(90deg, var(--color-accent), var(--color-warm));
+  background: linear-gradient(90deg, var(--brand-blue), var(--brand-red));
   transition: width 0.2s linear;
 }
 
@@ -217,7 +223,7 @@
   color: var(--color-accent);
   font-family: var(--font-display);
   font-size: 1.4rem;
-  font-weight: 650;
+  font-weight: 700;
   letter-spacing: -0.02em;
 }
 

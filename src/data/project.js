@@ -3,8 +3,7 @@ export const projectCover = {
   faculty: 'Facultad de Ingeniería y Arquitectura',
   course: 'Planificación estratégica y organización informática',
   title: 'Proyecto de curso · Avance I',
-  subtitle:
-    'Diagnóstico estratégico y tecnológico de Distribuidora Comercial del Pacífico (DICOPSA).',
+  subtitle: 'Diagnóstico estratégico y tecnológico de Casa Pellas, S.A.',
   team: ['Elias Adrian Marín Cruz', 'Diedereich Alexander Alemán Martínez'],
   teacher: 'Noel José Gavarrete Martínez',
   date: '30 de septiembre de 2026',
@@ -14,7 +13,7 @@ export const projectCover = {
 export const projectStory = [
   {
     kicker: 'Objetivo',
-    text: 'Analizar la idea empresarial y sus planes para determinar los aspectos básicos con los que la empresa cuenta para competir.'
+    text: 'Analizar la idea empresarial dada y sus planes como empresa, para determinar aquellos aspectos básicos con los que la empresa cuenta para competir.'
   },
   {
     kicker: 'Alcance',

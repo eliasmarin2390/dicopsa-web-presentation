@@ -1,6 +1,6 @@
-# DICOPSA Corporate Website
+# Casa Pellas · Diagnóstico estratégico
 
-Sitio web corporativo interactivo para presentar el diagnóstico estratégico y tecnológico de Distribuidora Comercial del Pacífico, S.A. (DICOPSA).
+Sitio web interactivo para presentar el diagnóstico estratégico y tecnológico de Casa Pellas, S.A. (Proyecto de curso · Avance I).
 
 ## Objetivo académico
 
@@ -20,19 +20,19 @@ Presentar, de forma clara y profesional, el análisis del perfil de la empresa, 
 ## Inicio rápido
 
 1. Instala [Node.js LTS](https://nodejs.org/), que incluye `npm`.
-2. Clona el repositorio y abre la carpeta `dicopsa-corporate-website` en VS Code.
+2. Clona el repositorio y abre la carpeta `casa-pellas-website` en VS Code.
 3. Instala las dependencias una sola vez:
 
 ```bash
 npm install
 ```
 
-4. Inicia el proyecto desde **Terminal > Run Task > DICOPSA: Iniciar en Google Chrome**.
+4. Inicia el proyecto desde **Terminal > Run Task > Casa Pellas: Iniciar en Google Chrome**.
 
 La aplicación se abrirá en:
 
 ```text
-http://localhost:5173/dicopsa-corporate-website/
+http://localhost:5173/casa-pellas-website/
 ```
 
 Como alternativa, ejecuta `npm run dev` desde la terminal integrada de VS Code.
@@ -55,14 +55,14 @@ Como alternativa, ejecuta `npm run dev` desde la terminal integrada de VS Code.
 
 La forma recomendada es abrir la carpeta raíz del repositorio directamente en VS Code, no la carpeta `src` ni ningún subdirectorio. Esto permite que la configuración de tareas y extensiones de `.vscode` se detecte automáticamente.
 
-## Iniciar DICOPSA desde VS Code
+## Iniciar el sitio desde VS Code
 
 Hay dos opciones:
 
 ### Opción recomendada: tarea de VS Code
 
 - En VS Code abre el panel de Terminal.
-- En la parte superior del panel, selecciona la tarea `DICOPSA: Iniciar en Google Chrome`.
+- En la parte superior del panel, selecciona la tarea `Casa Pellas: Iniciar en Google Chrome`.
 - Si la carpeta acaba de abrirse, VS Code puede sugerir ejecutar la tarea automáticamente. Aprueba la ejecución para iniciar el proyecto sin escribir comandos.
 
 La tarea incluida en `.vscode/tasks.json` hace lo siguiente:
@@ -70,7 +70,7 @@ La tarea incluida en `.vscode/tasks.json` hace lo siguiente:
 - Comprueba si existe `node_modules`.
 - Ejecuta `npm install` solo si hace falta.
 - Lanza Vite una sola vez en `127.0.0.1:5173`.
-- Espera a que el servidor responda y abre Google Chrome en `http://localhost:5173/dicopsa-corporate-website/`.
+- Espera a que el servidor responda y abre Google Chrome en `http://localhost:5173/casa-pellas-website/`.
 - No usa la vista previa integrada de VS Code.
 
 La apertura se implementa en `scripts/start-dev-chrome.mjs`. El script busca Chrome en las variables `GOOGLE_CHROME_BIN` o `CHROME_PATH`, en el `PATH` y en las rutas estándar de instalación de Windows. No contiene rutas personales ni credenciales.
@@ -117,7 +117,7 @@ Vite seguirá ejecutándose y mostrará la URL en la terminal. Instala Google Ch
 $env:GOOGLE_CHROME_BIN = 'C:\Ruta\A\chrome.exe'
 ```
 
-Después, vuelve a ejecutar `DICOPSA: Iniciar en Google Chrome`.
+Después, vuelve a ejecutar `Casa Pellas: Iniciar en Google Chrome`.
 
 ### La tarea no se inicia automáticamente
 
@@ -125,11 +125,11 @@ VS Code puede pedir autorización para ejecutar tareas al abrir una carpeta. Sel
 
 ### Aparecen dos servidores
 
-Detén las tareas activas con `Ctrl + C`, cierra terminales duplicadas y ejecuta únicamente `DICOPSA: Iniciar en Google Chrome`. No ejecutes simultáneamente esa tarea y `npm run dev`.
+Detén las tareas activas con `Ctrl + C`, cierra terminales duplicadas y ejecuta únicamente `Casa Pellas: Iniciar en Google Chrome`. No ejecutes simultáneamente esa tarea y `npm run dev`.
 
 ## Ruta base de Vite
 
-La ruta base del proyecto está configurada en `vite.config.js` como `/dicopsa-corporate-website/`. Esta configuración es intencional para mantener la aplicación consistente con la ruta esperada en entornos de despliegue y en la URL local de desarrollo.
+La ruta base del proyecto está configurada en `vite.config.js` como `/casa-pellas-website/`. Esta configuración es intencional para mantener la aplicación consistente con la ruta esperada en entornos de despliegue y en la URL local de desarrollo.
 
 ## Comandos principales
 
@@ -147,7 +147,7 @@ npm run test
 
 - `index.html`: punto de entrada del sitio.
 - `src/components`: componentes renderizables reutilizables (cards, tablas, timeline, navbar, footer).
-- `src/data`: datos empresariales y contenido estructurado de DICOPSA.
+- `src/data`: datos empresariales y contenido estructurado de Casa Pellas.
 - `src/js`: orquestación de la aplicación y lógica de interacción.
 - `src/js/presentation`: módulos heredados de presentación Reveal.js conservados para compatibilidad y pruebas.
 - `src/utils`: utilidades compartidas de DOM y accesibilidad.
@@ -176,7 +176,7 @@ npm run test
 Ejemplos:
 
 - `feat(site): add section navigation and dynamic content rendering`
-- `feat(content): add DICOPSA profile slides`
+- `feat(content): add Casa Pellas profile section`
 - `test(navigation): cover progress and counter updates`
 - `docs: add architecture and content source notes`
 

@@ -40,6 +40,14 @@ export function renderSpecRows(panel, rows) {
   const list = createElement('dl', { className: 'spec-list' });
   rows.forEach((row) => {
     const term = createElement('dt', { textContent: row.label });
+    if (row.status) {
+      term.append(
+        createElement('span', {
+          className: 'spec-list__status',
+          textContent: row.status
+        })
+      );
+    }
     const detail = createElement('dd');
     detail.append(createBulletList(row.items));
     list.append(term, detail);

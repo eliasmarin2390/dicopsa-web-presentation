@@ -13,7 +13,6 @@ import {
   companyStrengths,
   currentSituation,
   economicResponse,
-  economicResponseNote,
   futureSituation,
   heroKPIs,
   companyTimeline,
@@ -21,9 +20,10 @@ import {
   suppliers
 } from '../data/company.js';
 import {
-  branchRisks,
   diagnosisRisks,
   diagnosisSynthesis,
+  externalOpportunitiesNote,
+  itSurveyGuide,
   managementQuestions,
   nextStep
 } from '../data/diagnosis.js';
@@ -134,9 +134,11 @@ function renderMaturity() {
 
 function renderSynthesis() {
   queryRequired('#loop-name').textContent = diagnosisSynthesis.loop;
-  queryRequired('#loop-step').textContent = diagnosisSynthesis.step;
+  queryRequired('#loop-step').textContent =
+    `${diagnosisSynthesis.step} ${diagnosisSynthesis.text}`;
   queryRequired('#critical-points').textContent =
     diagnosisSynthesis.criticalPoints;
+  queryRequired('#opportunities-note').textContent = externalOpportunitiesNote;
   queryRequired('#next-step-text').textContent = nextStep.text;
   renderQuestions(queryRequired('#mgmt-questions'), managementQuestions);
 }
@@ -159,7 +161,6 @@ function bootstrap() {
 
   renderSituation();
   renderList(queryRequired('#economic-response'), economicResponse);
-  queryRequired('#economic-note').textContent = economicResponseNote;
   renderCards(queryRequired('#competition-cards'), competition, {
     variant: 'list'
   });
@@ -184,7 +185,6 @@ function bootstrap() {
   renderCards(queryRequired('#risk-cards'), diagnosisRisks, {
     variant: 'feature'
   });
-  renderList(queryRequired('#branch-risks'), branchRisks);
   renderExternalRisk(queryRequired('#external-risk'), externalRisk);
 
   renderCards(queryRequired('#roadmap'), improvementRoadmap, {
@@ -192,6 +192,8 @@ function bootstrap() {
   });
 
   renderSynthesis();
+
+  renderQuestions(queryRequired('#survey-guide'), itSurveyGuide);
 
   // Efectos: se activan después de renderizar para que observen el contenido final.
   setupReveal(document);

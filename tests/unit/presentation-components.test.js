@@ -15,7 +15,7 @@ describe('presentation components', () => {
   it('extracts navigation items from slide elements', () => {
     const slides = [
       { dataset: { title: 'Portada institucional' } },
-      { dataset: { title: 'Perfil general de DICOPSA' } },
+      { dataset: { title: 'Perfil general de Casa Pellas' } },
       { dataset: {} }
     ];
 
@@ -23,7 +23,7 @@ describe('presentation components', () => {
 
     expect(items).toEqual([
       { index: 0, title: 'Portada institucional' },
-      { index: 1, title: 'Perfil general de DICOPSA' },
+      { index: 1, title: 'Perfil general de Casa Pellas' },
       { index: 2, title: 'Diapositiva 3' }
     ]);
   });

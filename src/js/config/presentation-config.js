@@ -1,5 +1,5 @@
 export const presentationConfig = {
-  title: 'DICOPSA | Planificación Estratégica y Organización Informática',
+  title: 'Casa Pellas | Planificación Estratégica y Organización Informática',
   transition: 'slide',
   backgroundTransition: 'fade',
   controls: false,

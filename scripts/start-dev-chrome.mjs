@@ -6,7 +6,7 @@ import process from 'node:process';
 
 const host = '127.0.0.1';
 const port = 5173;
-const url = `http://localhost:${port}/dicopsa-corporate-website/`;
+const url = `http://localhost:${port}/casa-pellas-website/`;
 const viteEntryPoint = join(
   process.cwd(),
   'node_modules',

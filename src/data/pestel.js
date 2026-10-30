@@ -3,14 +3,14 @@ export const pestelRows = [
     label: 'Políticos',
     value: {
       opportunities: [
-        'Tratados comerciales vigentes (CAFTA-DR, TLC con México) facilitan importar mercadería.',
+        'Tratados comerciales vigentes (CAFTA-DR, TLC con México) facilitan importar.',
         'La integración centroamericana (SICA) agiliza el comercio regional.',
-        'Políticas públicas que promueven la digitalización de trámites.'
+        'Políticas que promueven la digitalización de trámites.'
       ],
       threats: [
         'Incertidumbre en las relaciones comerciales con EE. UU. y posibles aranceles o restricciones.',
         'Cambios regulatorios poco previsibles.',
-        'Menor acceso a cooperación y financiamiento internacional.'
+        'Menor acceso a financiamiento internacional.'
       ]
     }
   },
@@ -18,14 +18,14 @@ export const pestelRows = [
     label: 'Económicos',
     value: {
       opportunities: [
-        'Estabilidad cambiaria relativa del córdoba frente al dólar permite planificar compras e inversiones de TI.',
+        'Estabilidad cambiaria del córdoba frente al dólar, útil para planificar importaciones.',
         'Las remesas sostienen el consumo de los hogares.',
-        'Mayor uso de pagos electrónicos reduce el manejo de efectivo.'
+        'Demanda de vehículos de trabajo (pick-ups y camiones) en el sector productivo.'
       ],
       threats: [
-        'Alzas del combustible elevan el costo logístico.',
-        'Los equipos de TI se importan y se pagan en dólares.',
-        'Presión inflacionaria sobre márgenes y crédito caro para invertir.'
+        'Vehículos importados y pagados en dólares; alzas de costos logísticos.',
+        'Volatilidad del precio del combustible.',
+        'Crédito más caro reduce la compra de vehículos.'
       ]
     }
   },
@@ -33,13 +33,13 @@ export const pestelRows = [
     label: 'Sociales',
     value: {
       opportunities: [
-        'Población joven con alto uso de teléfonos inteligentes.',
-        'Los dueños de pulperías ya usan WhatsApp para comprar.',
-        'Cultura de trato cercano con el cliente.'
+        'Población joven con alto uso de smartphones y redes sociales.',
+        'Clientes que investigan y cotizan en línea antes de comprar.',
+        'Mayor interés en vehículos eficientes en consumo.'
       ],
       threats: [
-        'Migración de talento TI hacia otros países.',
-        'Brecha de habilidades digitales en clientes y personal.',
+        'Migración de talento técnico (mecánicos y TI).',
+        'Preferencia por vehículos usados por su menor precio.',
         'Resistencia al cambio en procesos tradicionales.'
       ]
     }
@@ -48,14 +48,14 @@ export const pestelRows = [
     label: 'Tecnológicos',
     value: {
       opportunities: [
-        'Mayor cobertura de fibra óptica en Managua y cabeceras departamentales.',
-        'Nube híbrida y SaaS accesibles para respaldos y BI.',
-        'IA y analítica para predecir demanda y optimizar rutas.'
+        'Vehículos híbridos y eléctricos de las marcas representadas.',
+        'Nube, CRM y analítica para fidelizar clientes.',
+        'Telemetría e IoT para flotas y mantenimiento predictivo.'
       ],
       threats: [
+        'Entrada de marcas chinas de bajo precio y alta tecnología.',
         'Aumento de ransomware y phishing en la región.',
-        'Dependencia de pocos proveedores de Internet.',
-        'Obsolescencia rápida de equipos y licencias.'
+        'Obsolescencia rápida de sistemas y equipos.'
       ]
     }
   },
@@ -63,14 +63,14 @@ export const pestelRows = [
     label: 'Ecológicos',
     value: {
       opportunities: [
-        'Energía solar para bajar el consumo eléctrico del datacenter.',
-        'Green IT: virtualización y equipos eficientes.',
-        'Rutas optimizadas reducen combustible y emisiones.'
+        'Demanda de vehículos de menores emisiones.',
+        'Energía solar en talleres y sucursales.',
+        'Green IT: virtualización y equipos eficientes.'
       ],
       threats: [
         'Alta actividad sísmica en Managua.',
         'Huracanes y lluvias intensas en temporada.',
-        'Calor y cortes eléctricos dañan equipos sin climatización adecuada.'
+        'Normas ambientales más estrictas sobre emisiones.'
       ]
     }
   },
@@ -78,34 +78,34 @@ export const pestelRows = [
     label: 'Legales',
     value: {
       opportunities: [
-        'Ley 729 de Firma Electrónica respalda documentos digitales.',
+        'Ley 729 de Firma Electrónica respalda contratos y facturas digitales.',
         'Ley 787 de Protección de Datos Personales orienta el manejo de datos de clientes.',
-        'Digitalización progresiva de trámites tributarios y aduaneros.'
+        'Digitalización progresiva de trámites aduaneros y tributarios.'
       ],
       threats: [
-        'La Ley 1042 de Ciberdelitos aumenta la responsabilidad sobre el uso de sistemas y datos.',
-        'Sanciones por incumplir la protección de datos personales.',
-        'Auditorías de licenciamiento de software y cambios fiscales.'
+        'La Ley 1042 de Ciberdelitos aumenta la responsabilidad sobre sistemas y datos.',
+        'Sanciones por incumplir la protección de datos.',
+        'Cambios en aranceles e impuestos a la importación de vehículos.'
       ]
     }
   }
 ];
 
-// FODA: fortalezas y oportunidades vienen de company.js; aquí van debilidades y amenazas del documento.
+// FODA: fortalezas y oportunidades vienen de company.js; debilidades (a verificar) y amenazas salen del documento.
 export const swotWeaknesses = [
-  'TI reactiva: se compra tecnología cuando algo falla o cuando un área lo pide.',
-  'ERP en un único servidor, sin alta disponibilidad.',
-  'Respaldos solo dentro del mismo edificio.',
-  'Sin PETI/PESI, sin marco de gobierno ni gestión formal de riesgos.',
-  'Reportes gerenciales manuales en Excel y sin CRM ni inteligencia de negocios.',
-  'Redes y accesos sin segmentar ni control físico completo en los gabinetes.'
+  'Información tecnológica interna no pública: el diagnóstico debe validarse con TI.',
+  'Sistemas heredados por unidad de negocio (islas de información).',
+  'Posible climatización sin redundancia N+1 ni monitoreo ambiental.',
+  'Posibles respaldos sin copia fuera de sitio.',
+  'Sucursales con un solo enlace de Internet y red sin segmentar por VLANs.',
+  'Documentación y etiquetado incompletos.'
 ];
 
 export const swotThreats = [
-  'Alza del combustible e importación: presiona el costo logístico y el margen.',
-  'Ciberataques (ransomware y phishing) que podrían detener facturación y despacho.',
-  'Sismos, huracanes y lluvias intensas en temporada.',
-  'Cambios regulatorios poco previsibles e incertidumbre comercial con EE. UU.',
-  'Migración de talento TI y brecha de habilidades digitales.',
-  'Obsolescencia rápida de equipos y licencias.'
+  'Caída de la demanda de vehículos nuevos por alzas de costos de importación y crédito más caro.',
+  'Entrada de marcas chinas de bajo precio y alta tecnología.',
+  'Incertidumbre comercial con EE. UU. y posibles aranceles o restricciones.',
+  'Aumento de ransomware y phishing en la región.',
+  'Alta actividad sísmica, huracanes y lluvias intensas.',
+  'Migración de talento técnico (mecánicos y TI).'
 ];

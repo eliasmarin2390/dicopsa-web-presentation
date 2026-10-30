@@ -1,9 +1,9 @@
 {
-  "name": "dicopsa-corporate-website",
+  "name": "casa-pellas-website",
   "version": "1.0.0",
   "private": true,
   "type": "module",
-  "description": "Sitio web corporativo interactivo basado en el diagnóstico estratégico y tecnológico de DICOPSA.",
+  "description": "Sitio web interactivo con el diagnóstico estratégico y tecnológico de Casa Pellas, S.A.",
   "scripts": {
     "dev": "vite",
     "build": "vite build",

@@ -8,8 +8,10 @@
   padding: 0.85rem 1.75rem;
   border: 1px solid transparent;
   border-radius: var(--radius-pill);
-  font-size: 1rem;
-  font-weight: 600;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
   line-height: 1.2;
   text-decoration: none;
   transition:
@@ -24,22 +26,22 @@
 }
 
 .button--primary {
-  background: var(--color-text-strong);
-  color: var(--color-bg);
+  background: var(--brand-blue);
+  color: var(--color-on-brand);
 }
 
 .button--primary:hover {
-  background: #d7dee7;
+  background: var(--brand-blue-dark);
 }
 
 .button--ghost {
-  border-color: var(--color-line-strong);
+  border-color: var(--brand-blue);
   background: transparent;
-  color: var(--color-text-strong);
+  color: var(--brand-blue);
 }
 
 .button--ghost:hover {
-  background: var(--color-surface);
+  background: var(--color-accent-soft);
 }
 
 /* ---------- Paneles y textos ---------- */
@@ -202,11 +204,11 @@
   background: var(--color-surface-2);
 }
 
-/* Etapa 2 de 7 */
+/* Etapa 3 con avances hacia la etapa 4 */
 .maturity__dot {
   position: absolute;
   top: 50%;
-  left: calc((2 / 7) * 100%);
+  left: 35%;
   width: 16px;
   height: 16px;
   border-radius: 50%;
@@ -249,7 +251,7 @@
   color: var(--color-accent);
   font-family: var(--font-display);
   font-size: 1.6rem;
-  font-weight: 650;
+  font-weight: 700;
 }
 
 .question strong {

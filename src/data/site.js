@@ -1,5 +1,4 @@
-export const siteTitle =
-  'DICOPSA | Sitio corporativo y diagnóstico estratégico';
+export const siteTitle = 'Casa Pellas | Diagnóstico estratégico y tecnológico';
 
 export const siteNavigation = [
   { href: '#perfil', label: 'Perfil' },
@@ -10,10 +9,11 @@ export const siteNavigation = [
   { href: '#interno', label: 'Infraestructura' },
   { href: '#riesgos', label: 'Riesgos' },
   { href: '#mejora', label: 'Mejora' },
-  { href: '#sintesis', label: 'Síntesis' }
+  { href: '#sintesis', label: 'Síntesis' },
+  { href: '#anexo', label: 'Anexo' }
 ];
 
 export const siteFooter = {
   academicContext:
-    'Proyecto académico basado en el avance I de Planificación Estratégica y Organización Informática de la Universidad Americana de Nicaragua.'
+    'Proyecto académico basado en el avance I de Planificación Estratégica y Organización Informática de la Universidad Americana de Nicaragua. Sitio académico no oficial: Casa Pellas y las marcas mencionadas pertenecen a sus respectivos titulares.'
 };

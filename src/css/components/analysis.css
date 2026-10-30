@@ -111,6 +111,21 @@
   font-weight: 600;
 }
 
+.spec-list__status {
+  display: block;
+  width: fit-content;
+  margin-top: var(--space-2);
+  padding: 0.15rem 0.5rem;
+  border-radius: var(--radius-sm);
+  background: var(--color-warm-soft);
+  color: var(--brand-red-dark);
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
 .spec-list > dd {
   padding-bottom: var(--space-5);
   border-bottom: 1px solid var(--color-line);
@@ -188,13 +203,13 @@
 }
 
 .topology__pulse {
-  fill: var(--color-warm);
-  filter: drop-shadow(0 0 6px rgba(216, 185, 130, 0.8));
+  fill: var(--brand-red);
+  filter: drop-shadow(0 0 5px rgba(232, 55, 67, 0.6));
 }
 
 .topology__pulse--delayed {
   fill: var(--color-accent);
-  filter: drop-shadow(0 0 6px rgba(127, 195, 207, 0.8));
+  filter: drop-shadow(0 0 5px rgba(30, 82, 176, 0.6));
 }
 
 .topology figcaption {

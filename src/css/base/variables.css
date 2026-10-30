@@ -2,46 +2,52 @@
  * Design tokens: única fuente de verdad para colores, tipografía,
  * espaciado, radios, sombras y movimiento.
  *
- * Paleta: grafito azulado con acentos suaves. No se usa blanco puro
- * para el texto ni para las superficies, para reducir la fatiga visual.
+ * Paleta tomada de la identidad visual de Casa Pellas: azul marino del
+ * logotipo, azul rey de su sitio web, rojo de acento y fondos blancos.
  */
 :root {
-  /* Superficies */
-  --color-bg: #13171e;
-  --color-bg-elev: #181d26;
-  --color-surface: #1f2631;
-  --color-surface-2: #252d3a;
-  --color-surface-hover: #2a3342;
+  /* Marca */
+  --brand-navy: #132193;
+  --brand-blue: #1e52b0;
+  --brand-blue-dark: #18489b;
+  --brand-red: #e83743;
+  --brand-red-dark: #c8202b;
+  --brand-ink: #0c1650;
 
-  /* Texto (contraste AA sobre --color-surface) */
-  --color-text: #e2e7ee;
-  --color-text-strong: #eef2f6;
-  --color-text-muted: #a4aebd;
-  --color-text-faint: #7d8898;
+  /* Superficies */
+  --color-bg: #ffffff;
+  --color-bg-elev: #f3f6fb;
+  --color-surface: #ffffff;
+  --color-surface-2: #eaf0f9;
+  --color-surface-hover: #dde7f5;
+
+  /* Texto (contraste AA sobre blanco) */
+  --color-text: #2b3445;
+  --color-text-strong: var(--brand-ink);
+  --color-text-muted: #4f5a6d;
+  --color-text-faint: #6b7487;
+  --color-on-brand: #ffffff;
 
   /* Bordes */
-  --color-line: rgba(164, 178, 200, 0.14);
-  --color-line-strong: rgba(164, 178, 200, 0.26);
+  --color-line: rgba(19, 33, 147, 0.12);
+  --color-line-strong: rgba(19, 33, 147, 0.24);
 
   /* Acentos */
-  --color-accent: #7fc3cf;
-  --color-accent-strong: #5aa9b8;
-  --color-accent-soft: rgba(127, 195, 207, 0.14);
-  --color-warm: #d8b982;
-  --color-warm-soft: rgba(216, 185, 130, 0.14);
-  --color-rose: #c99a92;
-  --color-rose-soft: rgba(201, 154, 146, 0.14);
-  --color-sage: #9cc9ad;
-  --color-sage-soft: rgba(156, 201, 173, 0.14);
-  --color-focus: #8fd0dc;
+  --color-accent: var(--brand-blue);
+  --color-accent-strong: var(--brand-blue-dark);
+  --color-accent-soft: rgba(30, 82, 176, 0.1);
+  --color-warm: var(--brand-red-dark);
+  --color-warm-soft: rgba(232, 55, 67, 0.1);
+  --color-rose: var(--brand-red-dark);
+  --color-rose-soft: rgba(232, 55, 67, 0.08);
+  --color-sage: #1d7a4a;
+  --color-sage-soft: rgba(29, 122, 74, 0.08);
+  --color-focus: var(--brand-blue);
 
-  /* Tipografía */
-  --font-body:
-    'Segoe UI Variable', 'Segoe UI', system-ui, -apple-system, 'Helvetica Neue',
-    Arial, sans-serif;
+  /* Tipografía: sans-serif sobria y en negrita, como el sitio de la marca */
+  --font-body: 'Segoe UI', 'Helvetica Neue', Arial, system-ui, sans-serif;
   --font-display:
-    'Segoe UI Variable Display', 'Segoe UI Variable', 'Segoe UI', system-ui,
-    -apple-system, 'Helvetica Neue', Arial, sans-serif;
+    'Segoe UI', 'Helvetica Neue', Arial, system-ui, -apple-system, sans-serif;
 
   /* Espaciado */
   --space-1: 0.25rem;
@@ -51,17 +57,17 @@
   --space-5: 1.5rem;
   --space-6: 2rem;
   --space-7: 3rem;
-  --space-8: clamp(5rem, 11vw, 8rem);
+  --space-8: clamp(4.5rem, 9vw, 7rem);
 
-  /* Forma y profundidad */
-  --radius-sm: 10px;
-  --radius-md: 16px;
-  --radius-lg: 24px;
-  --radius-xl: 32px;
-  --radius-pill: 999px;
-  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.25);
-  --shadow-md: 0 12px 32px rgba(0, 0, 0, 0.28);
-  --shadow-lg: 0 28px 60px rgba(0, 0, 0, 0.36);
+  /* Forma y profundidad: esquinas más rectas que el tema anterior */
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+  --radius-xl: 12px;
+  --radius-pill: 4px;
+  --shadow-sm: 0 1px 2px rgba(12, 22, 80, 0.06);
+  --shadow-md: 0 8px 24px rgba(12, 22, 80, 0.1);
+  --shadow-lg: 0 18px 44px rgba(12, 22, 80, 0.16);
 
   /* Movimiento */
   --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
@@ -71,5 +77,5 @@
   /* Layout */
   --container-width: 1120px;
   --container: min(var(--container-width), calc(100% - 3rem));
-  --header-height: 60px;
+  --header-height: 70px;
 }

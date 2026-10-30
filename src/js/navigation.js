@@ -1,9 +1,16 @@
 import { queryAll } from '../utils/dom.js';
 
+// Resalta en el menú la sección que está bajo la cabecera.
+// Se calcula por posición (no por porcentaje visible) para que funcione con secciones largas.
 export function setupScrollSpy(sections) {
   const links = queryAll('.site-nav a, .site-footer__nav a');
+  let currentId = '';
 
   const setActive = (id) => {
+    if (id === currentId) {
+      return;
+    }
+    currentId = id;
     links.forEach((link) => {
       const isActive = link.getAttribute('href') === `#${id}`;
       link.dataset.active = String(isActive);
@@ -15,27 +22,38 @@ export function setupScrollSpy(sections) {
     });
   };
 
-  if (!('IntersectionObserver' in window)) {
-    setActive(sections[0]?.id ?? 'inicio');
-    return;
-  }
+  const update = () => {
+    const marker = window.innerHeight * 0.3;
+    const atBottom =
+      window.innerHeight + window.scrollY >=
+      document.documentElement.scrollHeight - 2;
 
-  const observer = new IntersectionObserver(
-    (entries) => {
-      const visible = entries
-        .filter((entry) => entry.isIntersecting)
-        .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
-
-      if (visible?.target?.id) {
-        setActive(visible.target.id);
+    let active = sections[0];
+    sections.forEach((section) => {
+      if (section.getBoundingClientRect().top <= marker) {
+        active = section;
       }
-    },
-    {
-      rootMargin: '-20% 0px -60% 0px',
-      threshold: [0.15, 0.3, 0.5]
+    });
+    if (atBottom) {
+      active = sections[sections.length - 1];
     }
-  );
 
-  sections.forEach((section) => observer.observe(section));
-  setActive(sections[0]?.id ?? 'inicio');
+    setActive(active?.id ?? 'inicio');
+  };
+
+  let scheduled = false;
+  const onScroll = () => {
+    if (scheduled) {
+      return;
+    }
+    scheduled = true;
+    window.requestAnimationFrame(() => {
+      scheduled = false;
+      update();
+    });
+  };
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', onScroll);
+  update();
 }

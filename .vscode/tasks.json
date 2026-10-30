@@ -2,7 +2,7 @@
   "version": "2.0.0",
   "tasks": [
     {
-      "label": "DICOPSA: Preparar entorno",
+      "label": "Casa Pellas: Preparar entorno",
       "type": "shell",
       "command": "cmd",
       "args": [
@@ -20,14 +20,14 @@
       }
     },
     {
-      "label": "DICOPSA: Iniciar en Google Chrome",
+      "label": "Casa Pellas: Iniciar en Google Chrome",
       "type": "shell",
       "command": "node",
       "args": ["scripts/start-dev-chrome.mjs"],
       "options": {
         "cwd": "${workspaceFolder}"
       },
-      "dependsOn": ["DICOPSA: Preparar entorno"],
+      "dependsOn": ["Casa Pellas: Preparar entorno"],
       "dependsOrder": "sequence",
       "problemMatcher": [],
       "presentation": {

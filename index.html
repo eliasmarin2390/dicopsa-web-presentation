@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="DICOPSA: diagnóstico estratégico, entorno PESTEL, infraestructura tecnológica (MDF e IDF), riesgos y plan de mejora. Proyecto de curso, Avance I."
+      content="Casa Pellas: diagnóstico estratégico, entorno PESTEL, infraestructura tecnológica (MDF e IDF), riesgos y plan de mejora. Proyecto de curso, Avance I."
     />
-    <meta name="theme-color" content="#13171e" />
+    <meta name="theme-color" content="#132193" />
     <link rel="stylesheet" href="/src/css/main.css" />
-    <title>DICOPSA | Diagnóstico estratégico</title>
+    <title>Casa Pellas | Diagnóstico estratégico</title>
   </head>
   <body>
     <div class="site-shell">
@@ -26,9 +26,13 @@
         aria-label="Cabecera principal"
       >
         <div class="site-header__inner container">
-          <a class="brand" href="#inicio" aria-label="Ir al inicio de DICOPSA">
-            <span class="brand__mark">D</span>
-            <span class="brand__text">DICOPSA</span>
+          <a
+            class="brand"
+            href="#inicio"
+            aria-label="Ir al inicio de Casa Pellas"
+          >
+            <span class="brand__word">Casa Pellas</span>
+            <span class="brand__tag">Suficiente garantía</span>
           </a>
 
           <button
@@ -58,6 +62,7 @@
               <li><a href="#riesgos">Riesgos</a></li>
               <li><a href="#mejora">Mejora</a></li>
               <li><a href="#sintesis">Síntesis</a></li>
+              <li><a href="#anexo">Anexo</a></li>
             </ul>
           </nav>
         </div>
@@ -86,10 +91,10 @@
               Universidad Americana · Planificación estratégica y organización
               informática
             </p>
-            <h1 id="hero-title" class="hero__title" data-reveal>DICOPSA</h1>
+            <h1 id="hero-title" class="hero__title" data-reveal>Casa Pellas</h1>
             <p class="hero__subtitle" data-reveal>
-              Diagnóstico estratégico y tecnológico de Distribuidora Comercial
-              del Pacífico. Proyecto de curso · Avance I.
+              Distribuidor de movilidad desde 1913. Diagnóstico estratégico y
+              tecnológico · Proyecto de curso, Avance I.
             </p>
             <p class="hero__meta" id="cover-meta" data-reveal></p>
             <div class="hero__actions" data-reveal>
@@ -110,9 +115,7 @@
           <div class="container">
             <div class="section-heading" data-reveal>
               <p class="eyebrow">Perfil de la compañía</p>
-              <h2 id="perfil-title">
-                Una distribuidora sólida, con 22 años de historia.
-              </h2>
+              <h2 id="perfil-title">Más de un siglo moviendo a Nicaragua.</h2>
               <p class="lead" id="company-profile-text"></p>
             </div>
 
@@ -139,7 +142,7 @@
           <div class="container">
             <div class="section-heading" data-reveal>
               <p class="eyebrow">Entorno y posición</p>
-              <h2 id="entorno-title">De hoy a 2030, y cómo compite DICOPSA.</h2>
+              <h2 id="entorno-title">Dónde está hoy y cómo compite.</h2>
             </div>
 
             <div id="situation-cards" class="card-grid" data-reveal-group></div>
@@ -150,7 +153,6 @@
                   Respuesta a las condiciones económicas, servicio y mercado
                 </h3>
                 <ul id="economic-response" class="bullet-list"></ul>
-                <p class="note" id="economic-note"></p>
               </div>
               <div class="panel-block">
                 <h3>Competencia</h3>
@@ -177,7 +179,7 @@
             <div class="section-heading" data-reveal>
               <p class="eyebrow">Situación tecnológica</p>
               <h2 id="tecnologia-title">
-                La tecnología aún es un centro de costos.
+                De vender en digital a gestionar datos.
               </h2>
             </div>
 
@@ -266,8 +268,16 @@
                 Datacenter y cuartos de comunicaciones.
               </h2>
               <p class="lead">
-                Inventario, fortalezas, debilidades, posibles fallos, áreas de
-                mejora y certificaciones.
+                Ubicación, inventario, fortalezas, debilidades, posibles fallos
+                y certificaciones. Las áreas de mejora están en el plan de
+                mejora.
+              </p>
+              <p class="note">
+                La información interna del datacenter y de los cuartos de
+                comunicaciones de Casa Pellas no es pública. Este es un
+                escenario de referencia para una distribuidora de su tamaño;
+                cada punto debe confirmarse con el área de TI usando la guía del
+                anexo.
               </p>
             </div>
 
@@ -281,11 +291,14 @@
                 role="img"
                 aria-labelledby="topology-title topology-desc"
               >
-                <title id="topology-title">Topología de red de DICOPSA</title>
+                <title id="topology-title">
+                  Topología de red de referencia de Casa Pellas
+                </title>
                 <desc id="topology-desc">
-                  El MDF en oficinas centrales se conecta por fibra al IDF-2 de
-                  la bodega, al IDF-1 del segundo piso y por VPN a las
-                  sucursales de León, Masaya y Chinandega.
+                  Escenario de referencia: el MDF en las oficinas centrales de
+                  Managua se conecta a los IDF de cada piso y, por VPN, a salas
+                  de venta, talleres y sucursales departamentales como
+                  Matagalpa.
                 </desc>
                 <path class="topology__link" d="M400 150 L150 70" />
                 <path class="topology__link" d="M400 150 L650 70" />
@@ -320,73 +333,77 @@
                     text-anchor="middle"
                     class="topology__sub"
                   >
-                    Oficinas centrales
+                    Managua · por confirmar
                   </text>
                 </g>
                 <g class="topology__node">
                   <rect x="70" y="40" width="160" height="60" rx="14" />
-                  <text x="150" y="66" text-anchor="middle">IDF-1</text>
+                  <text x="150" y="66" text-anchor="middle">IDF por piso</text>
                   <text
                     x="150"
                     y="86"
                     text-anchor="middle"
                     class="topology__sub"
                   >
-                    2.º piso
+                    Oficinas centrales
                   </text>
                 </g>
                 <g class="topology__node">
                   <rect x="570" y="40" width="160" height="60" rx="14" />
-                  <text x="650" y="66" text-anchor="middle">IDF-2</text>
+                  <text x="650" y="66" text-anchor="middle">Talleres</text>
                   <text
                     x="650"
                     y="86"
                     text-anchor="middle"
                     class="topology__sub"
                   >
-                    Bodega · despacho
+                    IDF · posventa
                   </text>
                 </g>
                 <g class="topology__node">
                   <rect x="90" y="240" width="160" height="60" rx="14" />
-                  <text x="170" y="266" text-anchor="middle">León</text>
+                  <text x="170" y="266" text-anchor="middle">
+                    Salas de venta
+                  </text>
                   <text
                     x="170"
                     y="286"
                     text-anchor="middle"
                     class="topology__sub"
                   >
-                    IDF-3 · VPN
+                    IDF · VPN
                   </text>
                 </g>
                 <g class="topology__node">
                   <rect x="320" y="240" width="160" height="60" rx="14" />
-                  <text x="400" y="266" text-anchor="middle">Masaya</text>
+                  <text x="400" y="266" text-anchor="middle">Matagalpa</text>
                   <text
                     x="400"
                     y="286"
                     text-anchor="middle"
                     class="topology__sub"
                   >
-                    IDF-4 · VPN
+                    Sucursal · VPN
                   </text>
                 </g>
                 <g class="topology__node">
                   <rect x="550" y="240" width="160" height="60" rx="14" />
-                  <text x="630" y="266" text-anchor="middle">Chinandega</text>
+                  <text x="630" y="266" text-anchor="middle">
+                    Puntos de servicio
+                  </text>
                   <text
                     x="630"
                     y="286"
                     text-anchor="middle"
                     class="topology__sub"
                   >
-                    IDF-5 · VPN
+                    IDF · VPN
                   </text>
                 </g>
               </svg>
               <figcaption id="topology-caption">
-                Fibra al MDF desde la bodega; VPN sitio a sitio con las
-                sucursales.
+                Escenario de referencia, por confirmar con el área de TI: VPN
+                desde el MDF hacia salas de venta, talleres y sucursales.
               </figcaption>
             </figure>
 
@@ -404,18 +421,12 @@
             <div class="section-heading" data-reveal>
               <p class="eyebrow">Riesgos</p>
               <h2 id="riesgos-title">
-                Lo que podría detener la facturación y el despacho.
+                Lo que podría detener la facturación y los talleres.
               </h2>
             </div>
             <div id="risk-cards" class="card-grid" data-reveal-group></div>
 
-            <div class="split" data-reveal>
-              <div class="panel-block">
-                <h3>Riesgos operativos en sucursales</h3>
-                <ul id="branch-risks" class="bullet-list"></ul>
-              </div>
-              <div class="panel-block" id="external-risk"></div>
-            </div>
+            <div class="panel-block" id="external-risk" data-reveal></div>
           </div>
         </section>
 
@@ -458,9 +469,10 @@
               <div class="panel-block">
                 <h3>Puntos críticos</h3>
                 <p id="critical-points" class="body-text"></p>
+                <p id="opportunities-note" class="body-text"></p>
               </div>
               <div class="panel-block">
-                <h3>Siguiente avance</h3>
+                <h3>Siguiente paso</h3>
                 <p id="next-step-text" class="body-text"></p>
               </div>
             </div>
@@ -471,14 +483,35 @@
             <ol id="mgmt-questions" class="questions" data-reveal-group></ol>
           </div>
         </section>
+
+        <!-- Anexo: guía de levantamiento y fuentes -->
+        <section
+          id="anexo"
+          class="site-section site-section--alt"
+          aria-labelledby="anexo-title"
+        >
+          <div class="container">
+            <div class="section-heading" data-reveal>
+              <p class="eyebrow">Anexo</p>
+              <h2 id="anexo-title">
+                Guía de levantamiento para el área de TI.
+              </h2>
+              <p class="lead">
+                Preguntas para completar y validar el análisis interno mediante
+                visita o entrevista.
+              </p>
+            </div>
+            <ol id="survey-guide" class="questions" data-reveal-group></ol>
+          </div>
+        </section>
       </main>
 
       <footer id="site-footer" class="site-footer">
         <div class="container site-footer__inner">
           <div>
             <a class="brand brand--footer" href="#inicio">
-              <span class="brand__mark">D</span>
-              <span class="brand__text">DICOPSA</span>
+              <span class="brand__word">Casa Pellas</span>
+              <span class="brand__tag">Suficiente garantía</span>
             </a>
             <p class="site-footer__text"></p>
           </div>
@@ -488,8 +521,8 @@
           </nav>
 
           <p class="site-footer__meta">
-            © <span data-current-year></span> DICOPSA · Integrantes: Elias
-            Adrian Marín Cruz y Diedereich Alexander Alemán Martínez
+            © <span data-current-year></span> Proyecto académico · Integrantes:
+            Elias Adrian Marín Cruz y Diedereich Alexander Alemán Martínez
           </p>
         </div>
       </footer>

@@ -1,17 +1,17 @@
 export const diagnosisSynthesis = {
   loop: 'Bucle del Arquitecto Digital',
   step: '¿Dónde estamos?',
-  text: 'DICOPSA tiene una posición comercial sólida y una infraestructura de red funcional, pero su tecnología aún se gestiona como centro de costos y no como parte de la estrategia.',
+  text: 'Casa Pellas tiene una posición comercial sólida, sostenida por 113 años de trayectoria, marcas líderes y una red de posventa.',
   criticalPoints:
-    'Los puntos críticos están en la continuidad del negocio: el datacenter no tiene redundancia en climatización, energía ni servidores, y los respaldos no salen del edificio. En una zona sísmica y con más ciberataques, es un riesgo alto para la facturación y el despacho.'
+    'Su principal reto tecnológico es pasar de usar canales digitales para vender a gestionar los datos de clientes, vehículos y talleres como un activo estratégico, integrando sus distintas unidades de negocio.'
 };
 
 export const externalOpportunitiesNote =
-  'Las oportunidades externas (fibra óptica, nube híbrida, analítica e IA, y el uso de WhatsApp por parte de los comercios) solo generarán valor si antes se ordena la base.';
+  'Las oportunidades más relevantes son la movilidad híbrida y eléctrica, la venta omnicanal y la analítica de posventa. Solo generarán valor si la infraestructura garantiza la continuidad operativa y si existe un gobierno de TI que priorice las iniciativas.';
 
 export const nextStep = {
-  title: 'Siguiente avance del proyecto',
-  text: 'Definir la visión TO-BE y priorizar iniciativas con el filtro de cinco preguntas gerenciales, empezando por la continuidad operativa y la integración de datos antes de invertir en tecnologías más avanzadas.'
+  title: 'Siguiente paso',
+  text: 'Validar el análisis interno con el área de TI mediante la guía del anexo y priorizar las iniciativas con el filtro de las cinco preguntas gerenciales.'
 };
 
 export const managementQuestions = [
@@ -25,22 +25,54 @@ export const managementQuestions = [
 export const diagnosisRisks = [
   {
     title: 'Riesgo de continuidad',
-    text: 'Falta de redundancia en climatización, energía, servidores y copias fuera de sitio.'
+    text: 'Falla de climatización o corte eléctrico prolongado que detenga la facturación y los talleres.'
   },
   {
     title: 'Riesgo de ciberseguridad',
-    text: 'Ransomware que cifre servidores y NAS al estar en la misma red.'
+    text: 'Ransomware que afecte servidores y respaldos.'
   },
   {
     title: 'Riesgo físico',
-    text: 'Sismos, incendios, huracanes y lluvias intensas que afectan la infraestructura.'
+    text: 'Sismo o incendio en Managua sin sitio alterno.'
   }
 ];
 
-export const branchRisks = [
-  'Caída del switch de bodega: se detienen el despacho y los escáneres.',
-  'Caída de Internet en una sucursal: no puede facturar.',
-  'Daño físico por golpes o polvo en el IDF-2.',
-  'Acceso no autorizado a los gabinetes.',
-  'Saturación del Wi‑Fi en horas pico.'
+// Anexo: guía de levantamiento para validar el análisis interno con el área de TI.
+export const itSurveyGuide = [
+  {
+    title: 'Ubicación',
+    text: '¿Dónde está el datacenter (MDF)? ¿Cuántos IDF hay y en qué edificios o sucursales?'
+  },
+  {
+    title: 'Inventario',
+    text: '¿Cuántos racks, servidores, equipos de almacenamiento, firewalls, switches y enlaces de Internet existen? ¿Qué sistemas corren (ERP/DMS, CRM, facturación)?'
+  },
+  {
+    title: 'Redundancia',
+    text: '¿Hay servidores en alta disponibilidad, enlaces de respaldo y un sitio alterno o nube?'
+  },
+  {
+    title: 'Climatización',
+    text: '¿Qué tipo de aire acondicionado hay, cuántas unidades y se monitorea la temperatura?'
+  },
+  {
+    title: 'Electricidad / UPS',
+    text: '¿Qué capacidad y autonomía tienen las UPS? ¿Hay planta eléctrica con transferencia automática?'
+  },
+  {
+    title: 'Cableado',
+    text: '¿Qué categoría de cableado se usa? ¿Está etiquetado, documentado y certificado?'
+  },
+  {
+    title: 'Seguridad',
+    text: '¿Cómo se controla el acceso físico? ¿Hay detección de incendios, CCTV, segmentación por VLANs y política de respaldos?'
+  },
+  {
+    title: 'Certificaciones',
+    text: '¿Cuentan con alguna certificación (TIA-942, ISO/IEC 27001, otras)?'
+  },
+  {
+    title: 'Problemas',
+    text: '¿Cuáles han sido las principales fallas o incidentes en los últimos dos años?'
+  }
 ];

@@ -1,10 +1,10 @@
 # Content Source
 
-This presentation is based on the OCR text and page images extracted from the PDF provided by the user: `Proyecto_de_curso_-_Avance_I(1).pdf`.
+This presentation is based on the OCR text and page images extracted from the PDF provided by the user: `Proyecto_curso_Avance_CasaPellas.pdf`.
 
 ## Included source facts
 
-- Company name: Distribuidora Comercial del Pacífico, S.A. (DICOPSA).
+- Company name: Casa Pellas, S.A.
 - Location, dates, company history and operational facts.
 - Commercial scope, market geography and competitive position.
 - PESTEL opportunities and threats.
@@ -20,3 +20,4 @@ This presentation is based on the OCR text and page images extracted from the PD
 ## Ambiguities
 
 - The document references institutional and technical frameworks, but it does not prove formal certification or adoption of those standards. They are therefore shown as proposals or targets where appropriate.
+- Casa Pellas does not publish its internal IT information. The technological situation and the MDF/IDF analysis are a reference scenario from the source document, marked as "por confirmar" or "a validar", and must be confirmed with the IT area using the interview guide in the annex.

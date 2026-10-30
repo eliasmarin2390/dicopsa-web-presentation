@@ -52,7 +52,7 @@ function createTestDocument() {
       <div class="reveal" id="presentation">
         <div class="slides">
           <section data-title="Portada institucional"></section>
-          <section data-title="Perfil general de DICOPSA"></section>
+          <section data-title="Perfil general de Casa Pellas"></section>
           <section data-title="Historia y evolución empresarial"></section>
         </div>
       </div>
