@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Casa Pellas: diagnóstico estratégico, entorno PESTEL, infraestructura tecnológica (MDF e IDF), riesgos y plan de mejora. Proyecto de curso, Avance I."
+      content="Casa Pellas: diagnóstico estratégico, entorno PESTEL, análisis interno de TI, servicios de TI, FODA, objetivos, normativas y tendencias. Proyecto de curso, Avance V."
     />
     <meta name="theme-color" content="#132193" />
     <link rel="stylesheet" href="/src/css/main.css" />
@@ -52,17 +52,7 @@
             data-site-nav
             aria-label="Navegación principal"
           >
-            <ul class="site-nav__list">
-              <li><a href="#perfil">Perfil</a></li>
-              <li><a href="#entorno">Entorno</a></li>
-              <li><a href="#tecnologia">Tecnología</a></li>
-              <li><a href="#pestel">PESTEL</a></li>
-              <li><a href="#foda">FODA</a></li>
-              <li><a href="#interno">Infraestructura</a></li>
-              <li><a href="#riesgos">Riesgos</a></li>
-              <li><a href="#mejora">Mejora</a></li>
-              <li><a href="#sintesis">Síntesis</a></li>
-            </ul>
+            <ul class="site-nav__list"></ul>
           </nav>
         </div>
       </header>
@@ -93,19 +83,19 @@
             <h1 id="hero-title" class="hero__title" data-reveal>Casa Pellas</h1>
             <p class="hero__subtitle" data-reveal>
               Distribuidor de movilidad desde 1913. Diagnóstico estratégico y
-              tecnológico · Proyecto de curso, Avance I.
+              tecnológico · Proyecto de curso, Avance V.
             </p>
             <p class="hero__meta" id="cover-meta" data-reveal></p>
             <div class="hero__actions" data-reveal>
               <a class="button button--primary" href="#perfil"
                 >Explorar el diagnóstico</a
               >
-              <a class="button button--ghost" href="#sintesis">Ver síntesis</a>
+              <a class="button button--ghost" href="#pestel">Ver PESTEL</a>
             </div>
           </div>
         </section>
 
-        <!-- Perfil de la compañía -->
+        <!-- Perfil: empresa, ubicación, giro, operatividad, mercado y antecedentes -->
         <section
           id="perfil"
           class="site-section"
@@ -113,58 +103,100 @@
         >
           <div class="container">
             <div class="section-heading" data-reveal>
-              <p class="eyebrow">Perfil de la compañía</p>
-              <h2 id="perfil-title">Más de un siglo moviendo a Nicaragua.</h2>
+              <p class="eyebrow">Perfil</p>
+              <h2 id="perfil-title">Perfil de la compañía.</h2>
               <p class="lead" id="company-profile-text"></p>
             </div>
 
-            <div id="home-kpis" class="kpi-grid" data-reveal-group></div>
+            <div id="company-cards" class="card-grid" data-reveal-group></div>
 
-            <h3 class="subhead" data-reveal>Trayectoria</h3>
+            <h3 class="subhead" data-reveal>Antecedentes</h3>
             <div
               id="company-timeline"
               class="timeline-grid"
               data-scroll-progress
             ></div>
-
-            <h3 class="subhead" data-reveal>Modelo de negocio</h3>
-            <div id="company-cards" class="card-grid" data-reveal-group></div>
           </div>
         </section>
 
-        <!-- Entorno de la empresa -->
+        <!-- Situación actual, futura y respuesta a las condiciones -->
         <section
-          id="entorno"
+          id="situacion"
           class="site-section site-section--alt"
-          aria-labelledby="entorno-title"
+          aria-labelledby="situacion-title"
         >
           <div class="container">
             <div class="section-heading" data-reveal>
-              <p class="eyebrow">Entorno y posición</p>
-              <h2 id="entorno-title">Dónde está hoy y cómo compite.</h2>
+              <p class="eyebrow">Situación</p>
+              <h2 id="situacion-title">Dónde está hoy y hacia dónde va.</h2>
             </div>
 
             <div id="situation-cards" class="card-grid" data-reveal-group></div>
 
-            <div class="split" data-reveal>
-              <div class="panel-block">
-                <h3>
-                  Respuesta a las condiciones económicas, servicio y mercado
-                </h3>
-                <ul id="economic-response" class="bullet-list"></ul>
-              </div>
-              <div class="panel-block">
-                <h3>Competencia</h3>
-                <div
-                  id="competition-cards"
-                  class="stack"
-                  data-reveal-group
-                ></div>
-              </div>
+            <div class="panel-block" data-reveal>
+              <h3>
+                ¿Cómo responde a las condiciones económicas, de servicio y de
+                mercado?
+              </h3>
+              <ul id="economic-response" class="bullet-list"></ul>
             </div>
+          </div>
+        </section>
+
+        <!-- Competencia, proveedores y ventaja competitiva -->
+        <section
+          id="competencia"
+          class="site-section"
+          aria-labelledby="competencia-title"
+        >
+          <div class="container">
+            <div class="section-heading" data-reveal>
+              <p class="eyebrow">Competencia</p>
+              <h2 id="competencia-title">
+                Competencia, proveedores y ventaja competitiva.
+              </h2>
+            </div>
+
+            <h3 class="subhead" data-reveal>Competencia</h3>
+            <div
+              id="competition-cards"
+              class="card-grid"
+              data-reveal-group
+            ></div>
 
             <h3 class="subhead" data-reveal>Proveedores clave</h3>
             <div id="supplier-cards" class="card-grid" data-reveal-group></div>
+
+            <div id="advantage-card" class="card-grid" data-reveal-group></div>
+          </div>
+        </section>
+
+        <!-- Fortalezas clave, oportunidades clave y riesgo -->
+        <section
+          id="claves"
+          class="site-section site-section--alt"
+          aria-labelledby="claves-title"
+        >
+          <div class="container">
+            <div class="section-heading" data-reveal>
+              <p class="eyebrow">Factores clave</p>
+              <h2 id="claves-title">Fortalezas, oportunidades y riesgos.</h2>
+            </div>
+            <div class="swot-grid swot-grid--three" data-reveal-group>
+              <article class="swot-panel">
+                <h3>Fortalezas clave</h3>
+                <ul id="key-strengths" class="bullet-list"></ul>
+              </article>
+              <article class="swot-panel">
+                <h3>Oportunidades clave</h3>
+                <ul id="key-opportunities" class="bullet-list"></ul>
+              </article>
+              <article class="swot-panel">
+                <h3>Riesgos</h3>
+                <p id="key-risk-text" class="body-text"></p>
+                <ul id="key-risk-points" class="bullet-list"></ul>
+              </article>
+            </div>
           </div>
         </section>
 
@@ -176,9 +208,9 @@
         >
           <div class="container">
             <div class="section-heading" data-reveal>
-              <p class="eyebrow">Situación tecnológica</p>
+              <p class="eyebrow">Tecnología</p>
               <h2 id="tecnologia-title">
-                De vender en digital a gestionar datos.
+                Situación tecnológica de la compañía.
               </h2>
             </div>
 
@@ -212,10 +244,8 @@
         >
           <div class="container">
             <div class="section-heading" data-reveal>
-              <p class="eyebrow">Análisis externo</p>
-              <h2 id="pestel-title">
-                PESTEL: oportunidades y amenazas del entorno.
-              </h2>
+              <p class="eyebrow">PESTEL</p>
+              <h2 id="pestel-title">PESTEL: oportunidades y amenazas.</h2>
               <p class="lead">
                 Selecciona una dimensión para ver sus oportunidades y amenazas.
               </p>
@@ -224,262 +254,133 @@
           </div>
         </section>
 
-        <!-- FODA -->
-        <section id="foda" class="site-section" aria-labelledby="foda-title">
-          <div class="container">
-            <div class="section-heading" data-reveal>
-              <p class="eyebrow">FODA</p>
-              <h2 id="foda-title">
-                Fortalezas, oportunidades, debilidades y amenazas.
-              </h2>
-            </div>
-            <div class="swot-grid" data-reveal-group>
-              <article class="swot-panel">
-                <h3>Fortalezas</h3>
-                <ul id="swot-strengths" class="bullet-list"></ul>
-              </article>
-              <article class="swot-panel">
-                <h3>Oportunidades</h3>
-                <ul id="swot-opportunities" class="bullet-list"></ul>
-              </article>
-              <article class="swot-panel">
-                <h3>Debilidades</h3>
-                <ul id="swot-weaknesses" class="bullet-list"></ul>
-              </article>
-              <article class="swot-panel">
-                <h3>Amenazas</h3>
-                <ul id="swot-threats" class="bullet-list"></ul>
-              </article>
-            </div>
-          </div>
-        </section>
-
         <!-- Análisis interno: MDF e IDF -->
         <section
           id="interno"
-          class="site-section site-section--alt"
+          class="site-section"
           aria-labelledby="interno-title"
         >
           <div class="container">
             <div class="section-heading" data-reveal>
-              <p class="eyebrow">Análisis interno · Departamento de TI</p>
+              <p class="eyebrow">Análisis interno</p>
               <h2 id="interno-title">
-                Datacenter y cuartos de comunicaciones.
+                Datacenter, comunicaciones, redes y servidores.
               </h2>
               <p class="lead">
-                Ubicación, inventario, fortalezas, debilidades, posibles fallos
-                y certificaciones. Las áreas de mejora están en el plan de
-                mejora.
+                Ubicación, inventario, fortalezas, debilidades, posibles fallos,
+                áreas de mejora y certificaciones.
               </p>
-              <p class="note">
-                La información interna del datacenter y de los cuartos de
-                comunicaciones de Casa Pellas no es pública. Este es un
-                escenario de referencia para una distribuidora de su tamaño;
-                cada punto debe confirmarse con el área de TI mediante visita o
-                entrevista.
-              </p>
+              <p class="note" id="internal-limitation"></p>
             </div>
-
-            <figure
-              class="topology"
-              data-reveal
-              aria-labelledby="topology-caption"
-            >
-              <svg
-                viewBox="0 0 800 340"
-                role="img"
-                aria-labelledby="topology-title topology-desc"
-              >
-                <title id="topology-title">
-                  Topología de red de referencia de Casa Pellas
-                </title>
-                <desc id="topology-desc">
-                  Escenario de referencia: el MDF en las oficinas centrales de
-                  Managua se conecta a los IDF de cada piso y, por VPN, a salas
-                  de venta, talleres y sucursales departamentales como
-                  Matagalpa.
-                </desc>
-                <path class="topology__link" d="M400 150 L150 70" />
-                <path class="topology__link" d="M400 150 L650 70" />
-                <path class="topology__link" d="M400 150 L170 270" />
-                <path class="topology__link" d="M400 150 L400 270" />
-                <path class="topology__link" d="M400 150 L630 270" />
-                <circle class="topology__pulse" r="5" cx="0" cy="0">
-                  <animateMotion
-                    dur="5s"
-                    repeatCount="indefinite"
-                    path="M400 150 L650 70"
-                  />
-                </circle>
-                <circle
-                  class="topology__pulse topology__pulse--delayed"
-                  r="5"
-                  cx="0"
-                  cy="0"
-                >
-                  <animateMotion
-                    dur="6s"
-                    repeatCount="indefinite"
-                    path="M400 150 L170 270"
-                  />
-                </circle>
-                <g class="topology__node topology__node--core">
-                  <rect x="310" y="112" width="180" height="76" rx="18" />
-                  <text x="400" y="146" text-anchor="middle">MDF</text>
-                  <text
-                    x="400"
-                    y="170"
-                    text-anchor="middle"
-                    class="topology__sub"
-                  >
-                    Managua · por confirmar
-                  </text>
-                </g>
-                <g class="topology__node">
-                  <rect x="70" y="40" width="160" height="60" rx="14" />
-                  <text x="150" y="66" text-anchor="middle">IDF por piso</text>
-                  <text
-                    x="150"
-                    y="86"
-                    text-anchor="middle"
-                    class="topology__sub"
-                  >
-                    Oficinas centrales
-                  </text>
-                </g>
-                <g class="topology__node">
-                  <rect x="570" y="40" width="160" height="60" rx="14" />
-                  <text x="650" y="66" text-anchor="middle">Talleres</text>
-                  <text
-                    x="650"
-                    y="86"
-                    text-anchor="middle"
-                    class="topology__sub"
-                  >
-                    IDF · posventa
-                  </text>
-                </g>
-                <g class="topology__node">
-                  <rect x="90" y="240" width="160" height="60" rx="14" />
-                  <text x="170" y="266" text-anchor="middle">
-                    Salas de venta
-                  </text>
-                  <text
-                    x="170"
-                    y="286"
-                    text-anchor="middle"
-                    class="topology__sub"
-                  >
-                    IDF · VPN
-                  </text>
-                </g>
-                <g class="topology__node">
-                  <rect x="320" y="240" width="160" height="60" rx="14" />
-                  <text x="400" y="266" text-anchor="middle">Matagalpa</text>
-                  <text
-                    x="400"
-                    y="286"
-                    text-anchor="middle"
-                    class="topology__sub"
-                  >
-                    Sucursal · VPN
-                  </text>
-                </g>
-                <g class="topology__node">
-                  <rect x="550" y="240" width="160" height="60" rx="14" />
-                  <text x="630" y="266" text-anchor="middle">
-                    Puntos de servicio
-                  </text>
-                  <text
-                    x="630"
-                    y="286"
-                    text-anchor="middle"
-                    class="topology__sub"
-                  >
-                    IDF · VPN
-                  </text>
-                </g>
-              </svg>
-              <figcaption id="topology-caption">
-                Escenario de referencia, por confirmar con el área de TI: VPN
-                desde el MDF hacia salas de venta, talleres y sucursales.
-              </figcaption>
-            </figure>
 
             <div id="internal-tabs" class="tabs" data-reveal></div>
           </div>
         </section>
 
-        <!-- Riesgos -->
+        <!-- Detalle de servicios de TI (Avance IV) -->
         <section
-          id="riesgos"
-          class="site-section"
-          aria-labelledby="riesgos-title"
-        >
-          <div class="container">
-            <div class="section-heading" data-reveal>
-              <p class="eyebrow">Riesgos</p>
-              <h2 id="riesgos-title">
-                Lo que podría detener la facturación y los talleres.
-              </h2>
-            </div>
-            <div id="risk-cards" class="card-grid" data-reveal-group></div>
-
-            <div class="panel-block" id="external-risk" data-reveal></div>
-          </div>
-        </section>
-
-        <!-- Plan de mejora -->
-        <section
-          id="mejora"
+          id="servicios"
           class="site-section site-section--alt"
-          aria-labelledby="mejora-title"
+          aria-labelledby="servicios-title"
         >
           <div class="container">
             <div class="section-heading" data-reveal>
-              <p class="eyebrow">Plan de mejora</p>
-              <h2 id="mejora-title">
-                Ruta de transformación tecnológica y operativa.
-              </h2>
-            </div>
-            <div
-              id="roadmap"
-              class="roadmap"
-              data-scroll-progress
-              data-reveal-group
-            ></div>
-          </div>
-        </section>
-
-        <!-- Síntesis del diagnóstico -->
-        <section
-          id="sintesis"
-          class="site-section"
-          aria-labelledby="sintesis-title"
-        >
-          <div class="container">
-            <div class="section-heading" data-reveal>
-              <p class="eyebrow" id="loop-name"></p>
-              <h2 id="sintesis-title">Síntesis del diagnóstico.</h2>
-              <p class="lead" id="loop-step"></p>
+              <p class="eyebrow">Servicios de TI</p>
+              <h2 id="servicios-title">Detalle de servicios de TI.</h2>
+              <p class="note" id="services-note"></p>
             </div>
 
-            <div class="split" data-reveal>
-              <div class="panel-block">
-                <h3>Puntos críticos</h3>
-                <p id="critical-points" class="body-text"></p>
-                <p id="opportunities-note" class="body-text"></p>
-              </div>
-              <div class="panel-block">
-                <h3>Siguiente paso</h3>
-                <p id="next-step-text" class="body-text"></p>
-              </div>
-            </div>
+            <h3 class="subhead" data-reveal>Mapa de servicios</h3>
+            <div id="service-map" data-reveal></div>
+
+            <h3 class="subhead" data-reveal>Catálogo de servicios</h3>
+            <div id="service-catalog" data-reveal></div>
+
+            <h3 class="subhead" data-reveal>Portafolio de servicios</h3>
+            <div id="service-portfolio" data-reveal></div>
+
+            <h3 class="subhead" data-reveal>Mesa de ayuda</h3>
+            <div id="help-desk" class="card-grid" data-reveal-group></div>
 
             <h3 class="subhead" data-reveal>
-              Filtro de las cinco preguntas gerenciales
+              SLA y KPI de los servicios de TI
             </h3>
-            <ol id="mgmt-questions" class="questions" data-reveal-group></ol>
+            <div id="service-kpis" data-reveal></div>
+
+            <h3 class="subhead" data-reveal>Sistema de respaldo</h3>
+            <div class="panel-block" data-reveal>
+              <h3 id="backup-title"></h3>
+              <ul id="backup-points" class="bullet-list"></ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- FODA (Avance V) -->
+        <section id="foda" class="site-section" aria-labelledby="foda-title">
+          <div class="container">
+            <div class="section-heading" data-reveal>
+              <p class="eyebrow">FODA</p>
+              <h2 id="foda-title">FODA.</h2>
+              <p class="lead">
+                Síntesis del análisis externo e interno con los aspectos más
+                relevantes.
+              </p>
+            </div>
+            <div id="swot-grid" class="swot-grid" data-reveal-group></div>
+          </div>
+        </section>
+
+        <!-- Objetivos del negocio y de TI -->
+        <section
+          id="objetivos"
+          class="site-section site-section--alt"
+          aria-labelledby="objetivos-title"
+        >
+          <div class="container">
+            <div class="section-heading" data-reveal>
+              <p class="eyebrow">Objetivos</p>
+              <h2 id="objetivos-title">Objetivos del negocio y de TI.</h2>
+              <p class="lead" id="plan-period"></p>
+              <p class="note" id="vision-reference"></p>
+            </div>
+
+            <h3 class="subhead" data-reveal>Objetivos del negocio</h3>
+            <div
+              id="business-objectives"
+              class="card-grid"
+              data-reveal-group
+            ></div>
+
+            <h3 class="subhead" data-reveal>Objetivos de TI</h3>
+            <div id="it-objectives" class="card-grid" data-reveal-group></div>
+          </div>
+        </section>
+
+        <!-- Normativas, tendencias, mejores prácticas e indicadores -->
+        <section
+          id="normativas"
+          class="site-section"
+          aria-labelledby="normativas-title"
+        >
+          <div class="container">
+            <div class="section-heading" data-reveal>
+              <p class="eyebrow">Normativas</p>
+              <h2 id="normativas-title">
+                Aplicación de normativas y nuevas tendencias.
+              </h2>
+            </div>
+
+            <h3 class="subhead" data-reveal>1. Tendencias</h3>
+            <div id="trend-cards" class="card-grid" data-reveal-group></div>
+
+            <h3 class="subhead" data-reveal>2. Normativa</h3>
+            <div id="policy-cards" class="card-grid" data-reveal-group></div>
+
+            <h3 class="subhead" data-reveal>3. Mejores prácticas</h3>
+            <div id="practice-cards" class="card-grid" data-reveal-group></div>
+
+            <h3 class="subhead" data-reveal>4. Indicadores</h3>
+            <div id="indicator-cards" class="card-grid" data-reveal-group></div>
           </div>
         </section>
       </main>
@@ -500,7 +401,7 @@
 
           <p class="site-footer__meta">
             © <span data-current-year></span> Proyecto académico · Integrantes:
-            Elias Adrian Marín Cruz y Diedereich Alexander Alemán Martínez
+            Diedereich Alexander Alemán Martínez y Elias Adrian Marin Cruz
           </p>
         </div>
       </footer>

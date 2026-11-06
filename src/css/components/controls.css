@@ -116,6 +116,14 @@
   gap: var(--space-4);
 }
 
+.swot-grid--three {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.swot-panel .body-text + .bullet-list {
+  margin-top: var(--space-4);
+}
+
 .swot-panel {
   --panel-tone: var(--color-accent);
   padding: var(--space-6);

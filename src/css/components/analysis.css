@@ -243,3 +243,47 @@
     padding: var(--space-3);
   }
 }
+
+/* ---------- Tablas de servicios de TI ---------- */
+
+.data-table__wrap {
+  margin-top: var(--space-4);
+  overflow-x: auto;
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+}
+
+.data-table {
+  width: 100%;
+  min-width: 640px;
+  border-collapse: collapse;
+  font-size: 0.92rem;
+  line-height: 1.5;
+  text-align: left;
+}
+
+.data-table th,
+.data-table td {
+  padding: var(--space-3) var(--space-4);
+  border-bottom: 1px solid var(--color-line);
+  vertical-align: top;
+  color: var(--color-text-muted);
+}
+
+.data-table thead th {
+  background: var(--color-accent-soft);
+  color: var(--color-text-strong);
+  font-weight: 700;
+}
+
+.data-table tbody th {
+  color: var(--color-text-strong);
+  font-weight: 600;
+}
+
+.data-table tbody tr:last-child > * {
+  border-bottom: 0;
+}
+
+/* ---------- Referencias ---------- */

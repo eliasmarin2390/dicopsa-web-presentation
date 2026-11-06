@@ -33,6 +33,46 @@ export function renderPestelPanel(panel, row) {
   panel.append(grid);
 }
 
+// Tabla de datos con encabezado; en pantallas angostas se desplaza horizontalmente.
+export function renderTable(container, { intro, headers, rows }) {
+  clearElement(container);
+
+  if (intro) {
+    container.append(
+      createElement('p', { className: 'body-text', textContent: intro })
+    );
+  }
+
+  const table = createElement('table', { className: 'data-table' });
+  const headRow = createElement('tr');
+  headers.forEach((header) => {
+    headRow.append(
+      createElement('th', { textContent: header, attributes: { scope: 'col' } })
+    );
+  });
+  table.append(createElement('thead'));
+  table.tHead.append(headRow);
+
+  const body = createElement('tbody');
+  rows.forEach((cells) => {
+    const tr = createElement('tr');
+    cells.forEach((cell, index) => {
+      tr.append(
+        createElement(index === 0 ? 'th' : 'td', {
+          textContent: cell,
+          attributes: index === 0 ? { scope: 'row' } : {}
+        })
+      );
+    });
+    body.append(tr);
+  });
+  table.append(body);
+
+  const wrapper = createElement('div', { className: 'data-table__wrap' });
+  wrapper.append(table);
+  container.append(wrapper);
+}
+
 // Filas de especificación (etiqueta + lista de elementos), usadas en el análisis interno.
 export function renderSpecRows(panel, rows) {
   clearElement(panel);

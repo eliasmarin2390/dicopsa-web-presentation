@@ -1,3 +1,9 @@
+import { createElement } from '../utils/dom.js';
+
+// Debe coincidir con el @media (max-width: 1360px) de site.css.
+const DESKTOP_NAV_MIN = 1360;
+
+// El menú se construye desde `navigationItems` para que siempre coincida con las secciones.
 export function renderNavbar(container, navigationItems) {
   const toggle = container.querySelector('[data-nav-toggle]');
   const nav = container.querySelector('[data-site-nav]');
@@ -6,13 +12,21 @@ export function renderNavbar(container, navigationItems) {
     return;
   }
 
-  const links = Array.from(nav.querySelectorAll('a'));
-  const normalizedLinks = navigationItems.map((item) => item.href);
+  const list = nav.querySelector('.site-nav__list');
+  list.replaceChildren(
+    ...navigationItems.map((item) => {
+      const listItem = createElement('li');
+      listItem.append(
+        createElement('a', {
+          textContent: item.label,
+          attributes: { href: item.href, 'data-active': 'false' }
+        })
+      );
+      return listItem;
+    })
+  );
 
-  links.forEach((link) => {
-    const href = link.getAttribute('href');
-    link.dataset.active = normalizedLinks.includes(href) ? 'true' : 'false';
-  });
+  const links = Array.from(nav.querySelectorAll('a'));
 
   const setMenuState = (isOpen) => {
     nav.dataset.open = String(isOpen);
@@ -27,7 +41,7 @@ export function renderNavbar(container, navigationItems) {
   const openMenu = () => setMenuState(true);
 
   const syncWithViewport = () => {
-    setMenuState(window.innerWidth >= 960);
+    setMenuState(window.innerWidth > DESKTOP_NAV_MIN);
   };
 
   toggle.addEventListener('click', () => {
@@ -42,7 +56,7 @@ export function renderNavbar(container, navigationItems) {
 
   links.forEach((link) => {
     link.addEventListener('click', () => {
-      if (window.innerWidth < 960) {
+      if (window.innerWidth <= DESKTOP_NAV_MIN) {
         closeMenu();
       }
     });

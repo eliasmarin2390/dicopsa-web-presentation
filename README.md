@@ -1,6 +1,6 @@
 # Casa Pellas · Diagnóstico estratégico
 
-Sitio web interactivo para presentar el diagnóstico estratégico y tecnológico de Casa Pellas, S.A. (Proyecto de curso · Avance I).
+Sitio web interactivo para presentar el diagnóstico estratégico y tecnológico de Casa Pellas, S.A. (Proyecto de curso · Avance V).
 
 ## Objetivo académico
 

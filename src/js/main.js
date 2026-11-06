@@ -1,42 +1,55 @@
 import { renderCards } from '../components/cards.js';
 import { renderFooter } from '../components/footer.js';
-import { renderKpis } from '../components/kpis.js';
 import { renderNavbar } from '../components/navbar.js';
 import { renderTimeline } from '../components/timeline.js';
 import { renderTabs } from '../components/tabs.js';
-import { renderPestelPanel, renderSpecRows } from '../components/analysis.js';
+import {
+  renderPestelPanel,
+  renderSpecRows,
+  renderTable
+} from '../components/analysis.js';
 import {
   competition,
   companyCards,
   companyOpportunities,
   companyProfile,
   companyStrengths,
+  companyTimeline,
+  competitiveAdvantage,
   currentSituation,
   economicResponse,
-  futureSituation,
-  heroKPIs,
-  companyTimeline,
   externalRisk,
+  futureSituation,
   suppliers
 } from '../data/company.js';
 import {
-  diagnosisRisks,
-  diagnosisSynthesis,
-  externalOpportunitiesNote,
-  managementQuestions,
-  nextStep
-} from '../data/diagnosis.js';
-import {
+  backupSystem,
+  helpDesk,
   internalAnalysis,
+  internalLimitation,
+  serviceCatalog,
+  serviceKpis,
+  serviceMap,
+  servicePortfolio,
+  servicesNote,
   techMaturity,
   techSummary
 } from '../data/infrastructure.js';
+import {
+  bestPractices,
+  businessObjectives,
+  indicators,
+  itObjectives,
+  planPeriod,
+  policies,
+  swot,
+  trends,
+  visionReference
+} from '../data/strategy.js';
 import { projectCover } from '../data/project.js';
-import { pestelRows, swotThreats, swotWeaknesses } from '../data/pestel.js';
-import { improvementRoadmap } from '../data/recommendations.js';
+import { pestelRows } from '../data/pestel.js';
 import { siteFooter, siteNavigation, siteTitle } from '../data/site.js';
 import { applyReducedMotionClass, setupBackToTop } from './interactions.js';
-import { setupCounters } from './effects/counters.js';
 import { setupReveal } from './effects/reveal.js';
 import {
   setupParallax,
@@ -57,27 +70,13 @@ function renderCoverMeta(element) {
   element.textContent = `${team.join(' · ')} · Docente: ${teacher} · ${date} · ${place}`;
 }
 
-function renderExternalRisk(container, risk) {
-  container.replaceChildren(
-    createElement('h3', { textContent: risk.title }),
-    createElement('p', { className: 'body-text', textContent: risk.text })
-  );
-  const list = createElement('ul', { className: 'bullet-list' });
-  renderList(list, risk.points);
-  container.append(list);
-}
-
-function renderQuestions(listElement, questions) {
-  listElement.replaceChildren(
-    ...questions.map((question) => {
-      const item = createElement('li', { className: 'question' });
-      item.append(
-        createElement('strong', { textContent: question.title }),
-        createElement('span', { textContent: question.text })
-      );
-      return item;
-    })
-  );
+function renderProfile() {
+  queryRequired('#company-profile-text').textContent =
+    `${companyProfile.name} ${companyProfile.location} ${companyProfile.branches}`;
+  renderCards(queryRequired('#company-cards'), companyCards, {
+    variant: 'feature'
+  });
+  renderTimeline(queryRequired('#company-timeline'), companyTimeline);
 }
 
 function renderSituation() {
@@ -97,6 +96,38 @@ function renderSituation() {
     ],
     { variant: 'feature' }
   );
+  renderList(queryRequired('#economic-response'), economicResponse);
+}
+
+function renderMarket() {
+  renderCards(queryRequired('#competition-cards'), competition, {
+    variant: 'feature'
+  });
+  renderCards(queryRequired('#supplier-cards'), suppliers, {
+    variant: 'feature'
+  });
+  renderCards(queryRequired('#advantage-card'), [competitiveAdvantage], {
+    variant: 'feature'
+  });
+}
+
+function renderKeyFactors() {
+  renderList(queryRequired('#key-strengths'), companyStrengths);
+  renderList(queryRequired('#key-opportunities'), companyOpportunities);
+  queryRequired('#key-risk-text').textContent = externalRisk.text;
+  renderList(queryRequired('#key-risk-points'), externalRisk.points);
+}
+
+function renderTechnology() {
+  queryRequired('#maturity-stage').textContent =
+    `Etapa ${techMaturity.stage} · ${techMaturity.stageLabel}`;
+  queryRequired('#maturity-text').textContent = techMaturity.text;
+  queryRequired('#maturity-from').textContent = techMaturity.scale.from;
+  queryRequired('#maturity-to').textContent = techMaturity.scale.to;
+  queryRequired('#maturity-note').textContent = techMaturity.scale.note;
+  renderCards(queryRequired('#tech-summary'), techSummary, {
+    variant: 'feature'
+  });
 }
 
 function renderPestel() {
@@ -110,36 +141,57 @@ function renderPestel() {
 }
 
 function renderInternal() {
-  renderTabs(queryRequired('#internal-tabs'), [
-    {
-      label: internalAnalysis.mdf.label,
-      render: (panel) => renderSpecRows(panel, internalAnalysis.mdf.rows)
-    },
-    {
-      label: internalAnalysis.idf.label,
-      render: (panel) => renderSpecRows(panel, internalAnalysis.idf.rows)
-    }
-  ]);
+  queryRequired('#internal-limitation').textContent = internalLimitation;
+  renderTabs(
+    queryRequired('#internal-tabs'),
+    Object.values(internalAnalysis).map((area) => ({
+      label: area.label,
+      render: (panel) => renderSpecRows(panel, area.rows)
+    }))
+  );
 }
 
-function renderMaturity() {
-  queryRequired('#maturity-stage').textContent =
-    `Etapa ${techMaturity.stage} · ${techMaturity.stageLabel}`;
-  queryRequired('#maturity-text').textContent = techMaturity.text;
-  queryRequired('#maturity-from').textContent = techMaturity.scale.from;
-  queryRequired('#maturity-to').textContent = techMaturity.scale.to;
-  queryRequired('#maturity-note').textContent = techMaturity.scale.note;
+function renderServices() {
+  queryRequired('#services-note').textContent = servicesNote;
+  renderTable(queryRequired('#service-map'), serviceMap);
+  renderTable(queryRequired('#service-catalog'), serviceCatalog);
+  renderTable(queryRequired('#service-portfolio'), servicePortfolio);
+  renderCards(queryRequired('#help-desk'), helpDesk, { variant: 'feature' });
+  renderTable(queryRequired('#service-kpis'), serviceKpis);
+  queryRequired('#backup-title').textContent = backupSystem.title;
+  renderList(queryRequired('#backup-points'), backupSystem.points);
 }
 
-function renderSynthesis() {
-  queryRequired('#loop-name').textContent = diagnosisSynthesis.loop;
-  queryRequired('#loop-step').textContent =
-    `${diagnosisSynthesis.step} ${diagnosisSynthesis.text}`;
-  queryRequired('#critical-points').textContent =
-    diagnosisSynthesis.criticalPoints;
-  queryRequired('#opportunities-note').textContent = externalOpportunitiesNote;
-  queryRequired('#next-step-text').textContent = nextStep.text;
-  renderQuestions(queryRequired('#mgmt-questions'), managementQuestions);
+function renderSwot() {
+  const grid = queryRequired('#swot-grid');
+  grid.replaceChildren(
+    ...swot.map(({ title, items }) => {
+      const panel = createElement('article', { className: 'swot-panel' });
+      const list = createElement('ul', { className: 'bullet-list' });
+      renderList(list, items);
+      panel.append(createElement('h3', { textContent: title }), list);
+      return panel;
+    })
+  );
+}
+
+function renderStrategy() {
+  queryRequired('#plan-period').textContent = planPeriod;
+  queryRequired('#vision-reference').textContent = visionReference;
+  renderCards(queryRequired('#business-objectives'), businessObjectives, {
+    variant: 'roadmap'
+  });
+  renderCards(queryRequired('#it-objectives'), itObjectives, {
+    variant: 'roadmap'
+  });
+  renderCards(queryRequired('#trend-cards'), trends, { variant: 'feature' });
+  renderCards(queryRequired('#policy-cards'), policies, { variant: 'feature' });
+  renderCards(queryRequired('#practice-cards'), bestPractices, {
+    variant: 'feature'
+  });
+  renderCards(queryRequired('#indicator-cards'), indicators, {
+    variant: 'feature'
+  });
 }
 
 function bootstrap() {
@@ -150,51 +202,19 @@ function bootstrap() {
   renderFooter(queryRequired('#site-footer'), siteFooter, siteNavigation);
   renderCoverMeta(queryRequired('#cover-meta'));
 
-  renderKpis(queryRequired('#home-kpis'), heroKPIs);
-  queryRequired('#company-profile-text').textContent =
-    `${companyProfile.location} ${companyProfile.branches}`;
-  renderTimeline(queryRequired('#company-timeline'), companyTimeline);
-  renderCards(queryRequired('#company-cards'), companyCards, {
-    variant: 'feature'
-  });
-
+  renderProfile();
   renderSituation();
-  renderList(queryRequired('#economic-response'), economicResponse);
-  renderCards(queryRequired('#competition-cards'), competition, {
-    variant: 'list'
-  });
-  renderCards(queryRequired('#supplier-cards'), suppliers, {
-    variant: 'feature'
-  });
-
-  renderMaturity();
-  renderCards(queryRequired('#tech-summary'), techSummary, {
-    variant: 'feature'
-  });
-
+  renderMarket();
+  renderKeyFactors();
+  renderTechnology();
   renderPestel();
-
-  renderList(queryRequired('#swot-strengths'), companyStrengths);
-  renderList(queryRequired('#swot-opportunities'), companyOpportunities);
-  renderList(queryRequired('#swot-weaknesses'), swotWeaknesses);
-  renderList(queryRequired('#swot-threats'), swotThreats);
-
   renderInternal();
-
-  renderCards(queryRequired('#risk-cards'), diagnosisRisks, {
-    variant: 'feature'
-  });
-  renderExternalRisk(queryRequired('#external-risk'), externalRisk);
-
-  renderCards(queryRequired('#roadmap'), improvementRoadmap, {
-    variant: 'roadmap'
-  });
-
-  renderSynthesis();
+  renderServices();
+  renderSwot();
+  renderStrategy();
 
   // Efectos: se activan después de renderizar para que observen el contenido final.
   setupReveal(document);
-  setupCounters(document);
   setupSectionProgress(document);
   setupScrollProgress(queryRequired('[data-scroll-progress-bar]'));
   setupParallax(queryAll('[data-parallax-speed]'));
