@@ -42,9 +42,6 @@ export const swot = [
 export const planPeriod =
   'Periodo del plan: del 1 de enero de 2027 al 31 de diciembre de 2030 (4 años). Todos los objetivos vencen entre 2029 y 2030, es decir, entre 3 y 4 años después del inicio.';
 
-export const visionReference =
-  'Visión de referencia (propuesta del equipo, porque el sitio oficial de Toyota Casa Pellas no publica misión ni visión): ser el referente nacional en movilidad, con marcas líderes, vehículos eficientes y una experiencia de compra y posventa digital.';
-
 export const businessObjectives = [
   {
     phase: 'OBN-1',

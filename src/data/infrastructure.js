@@ -326,9 +326,6 @@ export const internalAnalysis = {
 };
 
 // Detalle de servicios de TI (Avance IV): propuesta del equipo sobre el escenario de referencia.
-export const servicesNote =
-  'Propuesta del equipo, construida sobre el escenario de referencia anterior. Solo los canales digitales marcados como comprobados tienen evidencia pública; el resto debe validarse con el área de TI.';
-
 export const serviceMap = {
   intro:
     'Relaciona cada proceso del negocio con el servicio de TI que lo soporta y los componentes de los que depende. Si falla un componente, el mapa muestra qué procesos se detienen.',

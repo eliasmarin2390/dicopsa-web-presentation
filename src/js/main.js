@@ -31,7 +31,6 @@ import {
   serviceKpis,
   serviceMap,
   servicePortfolio,
-  servicesNote,
   techMaturity,
   techSummary
 } from '../data/infrastructure.js';
@@ -43,8 +42,7 @@ import {
   planPeriod,
   policies,
   swot,
-  trends,
-  visionReference
+  trends
 } from '../data/strategy.js';
 import { projectCover } from '../data/project.js';
 import { pestelRows } from '../data/pestel.js';
@@ -152,7 +150,6 @@ function renderInternal() {
 }
 
 function renderServices() {
-  queryRequired('#services-note').textContent = servicesNote;
   renderTable(queryRequired('#service-map'), serviceMap);
   renderTable(queryRequired('#service-catalog'), serviceCatalog);
   renderTable(queryRequired('#service-portfolio'), servicePortfolio);
@@ -177,7 +174,6 @@ function renderSwot() {
 
 function renderStrategy() {
   queryRequired('#plan-period').textContent = planPeriod;
-  queryRequired('#vision-reference').textContent = visionReference;
   renderCards(queryRequired('#business-objectives'), businessObjectives, {
     variant: 'roadmap'
   });
